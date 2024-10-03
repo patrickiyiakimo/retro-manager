@@ -1,6 +1,7 @@
 
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
+import Sprint from "./components/Sprint";
 
 function App() {
   return (
@@ -10,6 +11,9 @@ function App() {
       </div>
       <div>
         <Hero />
+      </div>
+      <div>
+        <Sprint />
       </div>
     </main>
   );
