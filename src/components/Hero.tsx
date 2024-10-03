@@ -20,10 +20,10 @@ export default function Hero() {
           Absolutely free!
         </p>
         <div className="my-6 flex items-center justify-center ">
-          <button className="rounded-md bg-blue-700 px-7 py-3 text-white hover:bg-blue-600">
+          <button className="rounded-md font-bold bg-blue-700 px-7 py-3 text-white hover:bg-blue-600">
             Start Retro
           </button>
-          <button className="mx-4 rounded-md bg-gray-400 px-7 py-3 text-white hover:bg-blue-300">
+          <button className="mx-4 font-bold rounded-md bg-gray-400 px-7 py-3 text-white hover:bg-gray-500">
             Create Team
           </button>
         </div>
