@@ -1,6 +1,4 @@
 import React from "react";
-import { sprintDetails } from "./SprintDetails";
-// import { sprintDetails } from "sprintDetails";
 
 interface SprintProps {
   sprintDetails: {
@@ -52,4 +50,3 @@ export default function Sprint({ sprintDetails }: SprintProps) {
     </div>
   );
 }
-
