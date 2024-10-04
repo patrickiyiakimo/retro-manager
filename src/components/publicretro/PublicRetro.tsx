@@ -29,7 +29,7 @@ export default function Sprint({ publicRetro }: RetroProps) {
       </div>
       <div className="flex items-center justify-center">
         <button className="inline-flex items-center justify-center rounded-lg bg-blue-700 px-5 py-3 text-center text-base font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
-          Start Free Retro
+          Start Free Retro 
         </button>
       </div>
     </div>
