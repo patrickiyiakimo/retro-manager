@@ -25,7 +25,7 @@ export default function Sprint({ sprintDetails }: SprintProps) {
         </div>
         <div>
           <img
-            src="/images/undraw_Engineering_team_a7n2.png"
+            src="/images/undraw_real_time_collaboration_c62i.png"
             alt="engineering-sprint-section"
             className=" rounded-l-full"
           />
@@ -41,8 +41,8 @@ export default function Sprint({ sprintDetails }: SprintProps) {
             </figure>
 
             <div>
-              <h2 className="text-4xl font-bold">{title}</h2>
-              <p className="text-2xl">{body}</p>
+              <h2 className="text-2xl font-bold">{title}</h2>
+              <p className="text-xl">{body}</p>
             </div>
           </div>
         ))}

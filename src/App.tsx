@@ -41,7 +41,7 @@ import { sprintDetails } from "./components/sprint/SprintDetails";
 
 function App() {
   return (
-    <main className="min-h-screen bg-gray-100 font-mont text-gray-800 dark:bg-gray-800 dark:text-gray-200">
+    <main className="min-h-screen bg-white font-mont text-gray-800 dark:bg-gray-800 dark:text-gray-200">
       <div>
         <Navbar />
       </div>
