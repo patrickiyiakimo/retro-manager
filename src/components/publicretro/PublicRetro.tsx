@@ -10,7 +10,7 @@ interface RetroProps {
 
 export default function Sprint({ publicRetro }: RetroProps) {
   return (
-    <div className="bg-gray-200 pt-20 pb-20 d dark:bg-gray-800 dark:text-gray-300">
+    <div className="d bg-gray-200 pb-20 pt-20 dark:bg-gray-800 dark:text-gray-300">
       <h1 className="text-center text-4xl font-bold">Public Retro</h1>
 
       {/* Map over sprintDetails and render each item */}
@@ -27,7 +27,7 @@ export default function Sprint({ publicRetro }: RetroProps) {
           </div>
         ))}
       </div>
-      <div className="flex justify-center items-center">
+      <div className="flex items-center justify-center">
         <button className="inline-flex items-center justify-center rounded-lg bg-blue-700 px-5 py-3 text-center text-base font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
           Start Free Retro
         </button>
