@@ -10,7 +10,7 @@ interface RetroProps {
 
 export default function Sprint({ publicRetro }: RetroProps) {
   return (
-    <div className="d bg-gray-200 pb-20 pt-20 dark:bg-gray-800 dark:text-gray-300">
+    <div className=" bg-gray-200 py-20 dark:bg-gray-800 dark:text-gray-300">
       <h1 className="text-center text-4xl font-bold">Public Retro</h1>
 
       {/* Map over sprintDetails and render each item */}
@@ -18,7 +18,7 @@ export default function Sprint({ publicRetro }: RetroProps) {
         {publicRetro.map(({ id, Icon, title }) => (
           <div key={id} className=" mb-10  items-start">
             <figure>
-              <Icon className="h-10 w-10 text-blue-500" />
+              <Icon className="size-10 text-blue-500" />
             </figure>
 
             <div>

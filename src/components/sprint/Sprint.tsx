@@ -37,7 +37,7 @@ export default function Sprint({ sprintDetails }: SprintProps) {
         {sprintDetails.map(({ id, Icon, title, body }) => (
           <div key={id} className=" mb-10  items-start">
             <figure>
-              <Icon className="h-14 w-14" />
+              <Icon className="size-14" />
             </figure>
 
             <div>
