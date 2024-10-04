@@ -34,6 +34,7 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import PublicRetro from "./components/publicretro/PublicRetro";
+import { publicRetro } from "./components/publicretro/PublicRetro.";
 // import { publicRetro } from "./components/publicretro/PublicRetro.";
 // import { publicRetroData } from "./components/publicretro/PublicRetro.";
 import Sprint from "./components/sprint/Sprint";
@@ -50,6 +51,9 @@ function App() {
       </div>
       <div>
         <Sprint sprintDetails={sprintDetails} />
+      </div>
+      <div>
+        <PublicRetro publicRetro={publicRetro} />
       </div>
       <div>
         <Footer />
