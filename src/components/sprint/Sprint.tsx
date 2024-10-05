@@ -11,7 +11,7 @@ interface SprintProps {
 
 export default function Sprint({ sprintDetails }: SprintProps) {
   return (
-    <div className=" pb-40">
+    <div className="pb-20 md:pb-40">
       <div className="container md:flex md:gap-10">
         <div className=" ">
           <h1 className="ml-10 md:ml-20 pb-10 text-2xl md:text-5xl font-bold">
@@ -27,7 +27,7 @@ export default function Sprint({ sprintDetails }: SprintProps) {
           <img
             src="/images/undraw_real_time_collaboration_c62i.png"
             alt="engineering-sprint-section"
-            className="mt-10 rounded-lg md:rounded-l-full"
+            className="mt-10 rounded-lg md:rounded-l-full "
           />
         </div>
       </div>
