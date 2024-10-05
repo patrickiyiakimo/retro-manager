@@ -15,7 +15,7 @@ export default function Sprint({ publicRetro }: RetroProps) {
       <h1 className="text-center text-4xl font-bold">Public Retro</h1>
 
       {/* Map over sprintDetails and render each item */}
-      <div className="ml-10 md:ml-32  mt-10 sm:grid sm:grid-cols-2 items-center justify-center sm:gap-5 md:gap-10 md:px-40">
+      <div className="ml-10 md:ml-10 lg:ml-32  mt-10 sm:grid sm:grid-cols-2  items-center justify-center sm:gap-5 md:gap-10 md:px-10 lg:px-40">
         {publicRetro.map(({ id, Icon, title }) => (
           <div key={id} className=" mb-10  items-start">
             <figure>

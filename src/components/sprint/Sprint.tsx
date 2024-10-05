@@ -12,7 +12,7 @@ interface SprintProps {
 export default function Sprint({ sprintDetails }: SprintProps) {
   return (
     <div className="pb-20 md:pb-40">
-      <div className="container md:flex md:gap-10">
+      <div className="container lg:flex md:gap-10">
         <div className=" ">
           <h1 className="ml-10 md:ml-20 pb-10 text-2xl md:text-5xl font-bold">
             What is Sprint Evaluation?
@@ -27,13 +27,13 @@ export default function Sprint({ sprintDetails }: SprintProps) {
           <img
             src="/images/undraw_real_time_collaboration_c62i.png"
             alt="engineering-sprint-section"
-            className="mt-10 rounded-lg md:rounded-l-full "
+            className="mt-10 sm:px-10  sm:w-full rounded-lg md:ml-10 md:rounded-l-full lg:rounded-l-full "
           />
         </div>
       </div>
 
       {/* Map over sprintDetails and render each item */}
-      <div className="mt-20 mx-10 md:mt-40 md:grid md:grid-cols-2 gap-10 md:px-40 ">
+      <div className="mt-20 mx-10 md:mt-40 md:grid md:grid-cols-2 lg:grid lg:grid-cols-2 gap-10 md:px-10 ">
         {sprintDetails.map(({ id, Icon, title, body }) => (
           <div key={id} className=" mb-10  items-start">
             <figure>
