@@ -11,7 +11,7 @@ interface RetroProps {
 
 export default function Sprint({ publicRetro }: RetroProps) {
   return (
-    <div className=" bg-gray-200 py-20 dark:bg-gray-700 md:dark:bg-black dark:text-gray-300">
+    <div className=" bg-gray-200 py-20 dark:bg-gray-700 dark:text-gray-300">
       <h1 className="text-center text-4xl font-bold">Public Retro</h1>
 
       {/* Map over sprintDetails and render each item */}

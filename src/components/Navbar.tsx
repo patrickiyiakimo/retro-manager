@@ -12,8 +12,8 @@ const Navbar: React.FC = () => {
   return (
     <nav className="fixed start-0 top-0 z-20 w-full border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-900">
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
-        <a
-          href="https://flowbite.com/"
+        <Link
+          to="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <img
@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
           <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
             RM
           </span>
-        </a>
+        </Link>
         <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
           <Link to="/login">
             <button
