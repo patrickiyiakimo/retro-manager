@@ -8,6 +8,7 @@ import { sprintDetails } from "./components/sprint/SprintDetails";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LogIn from "./pages/LogIn";
 import RetroSection from "./pages/RetroSection";
+import SignUp from "./pages/SignUp";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             element={<PublicRetro publicRetro={publicRetro} />}
           />
           <Route path="/login" element={<LogIn />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/retrosection" element={<RetroSection />} />
         </Routes>
 

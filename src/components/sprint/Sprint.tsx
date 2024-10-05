@@ -14,7 +14,7 @@ export default function Sprint({ sprintDetails }: SprintProps) {
     <div className="pb-20 md:pb-40">
       <div className="container lg:flex md:gap-10">
         <div className=" ">
-          <h1 className="ml-10 md:ml-10 pb-10 text-2xl md:text-5xl font-bold lg:mt-20">
+          <h1 className="ml-10 md:ml-10 pb-10 text-2xl md:text-5xl font-bold lg:mt-40">
             What is Sprint Evaluation?
           </h1>
           <p className="ml-10 md:ml-10 md:text-2xl">
