@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -6,8 +7,8 @@ export default function Footer() {
       <footer className="bg-white dark:bg-gray-900">
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-between">
-            <div className="mb-6 md:mb-0">
-              <a href="https://flowbite.com/" className="flex items-center">
+            <Link to="/" className="mb-6 md:mb-0">
+              <a href="/" className="flex items-center">
                 <img
                   src="/images/logoipsum-296.svg"
                   className="h-8 mr-3"
@@ -17,7 +18,7 @@ export default function Footer() {
                   RM
                 </span>
               </a>
-            </div>
+            </Link>
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
               <div>
                 <h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
