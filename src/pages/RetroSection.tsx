@@ -10,7 +10,7 @@ export default function RetroSection() {
   })
 
   return (
-    <div className=" pt-40 ">
+    <div className=" pt-40 min-h-screen">
       <p className='mb-10 mx-10 text-xl'>{ formattedDate }</p>
       <form className="gap-10 px-10 md:flex">
         <div className="mb-4 w-full rounded-lg border border-gray-200 bg-gray-50 dark:border-gray-600 dark:bg-gray-700">
