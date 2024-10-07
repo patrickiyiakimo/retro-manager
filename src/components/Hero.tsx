@@ -35,12 +35,12 @@ const Hero: React.FC = () => {
                 />
               </svg>
             </Link>
-            <a
-              href="#"
+            <Link
+              to="/createteam"
               className="inline-flex items-center justify-center rounded-lg border border-white px-5 py-3 text-center text-base font-medium text-white hover:bg-gray-100 hover:text-gray-900 focus:ring-4 focus:ring-gray-400 sm:ms-4"
             >
               Create Team
-            </a>
+            </Link>
           </div>
         </div>
       </section>
