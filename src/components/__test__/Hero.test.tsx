@@ -1,9 +1,19 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import Hero from "../Hero";
-// import App from "./App";
+import { BrowserRouter } from "react-router-dom";
 
-test("renders learn react link", () => {
-  render(<Hero />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+
+const renderHero = () => {
+  return render(
+    <BrowserRouter>
+      <Hero />
+    </BrowserRouter>,
+  );
+}
+
+describe("Hero Component", () => {
+  it("renders the background image", () => {
+
+  });
+
+})
