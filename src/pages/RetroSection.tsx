@@ -1,19 +1,18 @@
-import Modal from './Modal';
+import Modal from "./Modal";
 
 export default function RetroSection() {
-
-  const currentDate = new Date()
+  const currentDate = new Date();
   const formattedDate = currentDate.toLocaleString("en-US", {
     year: "numeric",
     month: "long",
-    day: "numeric"
-  })
+    day: "numeric",
+  });
 
   return (
-    <div className=" pt-40 min-h-screen">
-      <p className='mb-10 mx-10 text-xl'>{ formattedDate }</p>
-      <form className="gap-10 px-10 md:flex">
-        <div className="mb-4 w-full rounded-lg border border-gray-200 bg-gray-50 dark:border-gray-600 dark:bg-gray-700">
+    <div className=" min-h-screen pt-40">
+      <p className="mx-10 mb-10 text-xl ">{formattedDate}</p>
+      <form className="gap-10 md:flex">
+        <div className="mb-4 w-full  rounded-lg border border-gray-200 bg-gray-50 dark:border-gray-600 dark:bg-gray-700">
           <div className="rounded-t-lg bg-white px-4 py-2 dark:bg-gray-800">
             <textarea
               id="comment"
@@ -71,10 +70,7 @@ export default function RetroSection() {
             <div className="flex space-x-1 ps-0 sm:ps-2 rtl:space-x-reverse"></div>
           </div>
         </div>
-        {/* </form> */}
-
-        {/* <div> */}
-        {/* <label>What do we need to improve on?</label> */}
+       
         <div className="mb-4 w-full rounded-lg border border-gray-200 bg-gray-50 dark:border-gray-600 dark:bg-gray-700">
           <div className="rounded-t-lg bg-white px-4 py-2 dark:bg-gray-800">
             <label className="sr-only">Your comment</label>
@@ -96,7 +92,6 @@ export default function RetroSection() {
           </div>
         </div>
       </form>
-     
       <Modal />
     </div>
   );
