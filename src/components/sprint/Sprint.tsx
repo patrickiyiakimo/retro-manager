@@ -26,10 +26,8 @@ export default function Sprint({ sprintDetails }: SprintProps) {
         <div>
           <img
             src="/images/main-pic-68043f7e0b9a77d65db913dd43a9da06.png"
-            // src="/images/undraw_real_time_collaboration_c62i.png"
             alt="engineering-sprint-section"
             className="mt-10 ml-10 sm:px-10  sm:w-full rounded-lg  md:rounded-l-full w-3/4 "
-            // className="mt-10 sm:px-10  sm:w-full rounded-lg md:ml-10 md:rounded-l-full lg:rounded-l-full "
           />
         </div>
       </div>

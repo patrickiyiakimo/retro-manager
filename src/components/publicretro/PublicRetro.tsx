@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 interface RetroProps {
   publicRetro: {
     id: number;
-    Icon: React.ElementType; // Icon is a React component
+    Icon: React.ElementType;
     title: string;
   }[];
 }
