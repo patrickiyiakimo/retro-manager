@@ -14,7 +14,7 @@ describe("Hero Component", () => {
   it("renders the background image", () => {
     renderHero();
 
-    const sectionElement = screen.getByRole("region");
+    const sectionElement = screen.getByRole("heading");
     expect(sectionElement).toHaveStyle({
       backgroundImage:
         "url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')",

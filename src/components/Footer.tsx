@@ -16,7 +16,7 @@ export default function Footer() {
               <img
                 src="/images/logoipsum-296.svg"
                 className="mr-3 h-8"
-                alt="Flowbite Logo"
+                alt="logoipsum-Logo"
               />
               <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
                 RM
@@ -29,13 +29,13 @@ export default function Footer() {
                 </h2>
                 <ul className="font-medium text-gray-500 dark:text-gray-400">
                   <li className="mb-4">
-                    <a href="" className="hover:underline">
+                    <a href="/" className="hover:underline">
                       Retro Manager
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://tailwindcss.com/"
+                      href="#"
                       className="hover:underline"
                     >
                       X (Twitter)
@@ -50,7 +50,7 @@ export default function Footer() {
                 <ul className="font-medium text-gray-500 dark:text-gray-400">
                   <li className="mb-4">
                     <a
-                      href="https://github.com/themesberg/flowbite"
+                      href="#"
                       className="hover:underline "
                     >
                       Github
@@ -58,7 +58,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <a
-                      href="https://discord.gg/4eeurUVvTy"
+                      href="3"
                       className="hover:underline"
                     >
                       Discord
@@ -89,7 +89,7 @@ export default function Footer() {
           <div className="sm:flex sm:items-center sm:justify-between">
             <span className="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
               © {formattedDate}
-              <a href="https://flowbite.com/" className="hover:underline">
+              <a href="/" className="hover:underline">
                 Retro Manager™
               </a>
               . All Rights Reserved.

@@ -92,7 +92,7 @@ export default function LogIn() {
             Already have an account?
             <Link
               to="/login"
-              className="text-blue-700 pl-1 hover:underline dark:text-blue-500"
+              className="text-blue-700 pl-2 hover:underline dark:text-blue-500"
             >
               Sign In
             </Link>
