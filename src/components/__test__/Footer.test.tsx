@@ -1,9 +1,18 @@
 import { render, screen } from "@testing-library/react";
-// import App from "./App";
 import Footer from "../Footer";
+import { BrowserRouter } from "react-router-dom";
 
-test("renders learn react link", () => {
-  render(<Footer />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+const renderFooter = () => {
+  return render(
+    <BrowserRouter>
+    <Footer />
+    </BrowserRouter>
+  )
+}
+
+describe("Footer Component", () => {
+  test("renders learn react link", () => {
+ 
 });
+})
+

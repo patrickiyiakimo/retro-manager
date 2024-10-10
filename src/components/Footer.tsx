@@ -1,23 +1,26 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+const currentDate = new Date()
+const formattedDate = currentDate.toLocaleDateString("en-US", {
+  year: "numeric"
+})
+
 export default function Footer() {
   return (
     <div>
       <footer className="bg-white dark:bg-gray-900">
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-between">
-            <Link to="/" className="mb-6 md:mb-0">
-              <a href="/" className="flex items-center">
-                <img
-                  src="/images/logoipsum-296.svg"
-                  className="h-8 mr-3"
-                  alt="Flowbite Logo"
-                />
-                <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-                  RM
-                </span>
-              </a>
+            <Link to="/" className="mb-6 flex items-center md:mb-0">
+              <img
+                src="/images/logoipsum-296.svg"
+                className="mr-3 h-8"
+                alt="Flowbite Logo"
+              />
+              <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
+                RM
+              </span>
             </Link>
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
               <div>
@@ -85,7 +88,7 @@ export default function Footer() {
           <hr className="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
           <div className="sm:flex sm:items-center sm:justify-between">
             <span className="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
-              © 2023
+              © {formattedDate}
               <a href="https://flowbite.com/" className="hover:underline">
                 Retro Manager™
               </a>

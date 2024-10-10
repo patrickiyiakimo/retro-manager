@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function LogIn() {
   return (
-    <div className="flex justify-center items-center py-40 ">
+    <div className="flex justify-center items-center py-40 min-h-screen">
       <div className=" w-full max-w-sm rounded-lg border border-gray-200 bg-white p-4 shadow dark:border-gray-700 dark:bg-gray-800 sm:p-6 md:p-8">
         <form className="space-y-6" action="#">
           <h5 className="text-xl font-medium text-gray-900 dark:text-white">
