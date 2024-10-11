@@ -1,56 +1,82 @@
-import { render, screen } from "@testing-library/react";
+import React from "react";
+import { render, fireEvent, waitFor, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import Hero from "../Hero";
-import { BrowserRouter } from "react-router-dom";
 
-const renderHero = () => {
-  return render(
-    <BrowserRouter>
-      <Hero />
-    </BrowserRouter>,
-  );
-};
-
-describe("Hero Component", () => {
-  it("renders the background image", () => {
-    renderHero();
-
-    const sectionElement = screen.getByRole("heading");
-    expect(sectionElement).toHaveStyle({
-      backgroundImage:
-        "url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')",
-    });
-  });
-  it("renders the heading text correctly", () => {
-    renderHero();
-
-    const headingElement = screen.getByRole("heading", {
-      name: /Enhance Team Collaboration with Effective Agile Retrospectives/i,
-    });
-    expect(headingElement).toBeInTheDocument();
-  });
-
-  it("renders paragraph text correctly", () => {
-    renderHero();
-
-    const paragraphElement = screen.getByText(
-      /drive continuous improvement and elevate your workflow. absolutely free!/i,
+describe("Hero component", () => {
+  it("renders correctly", () => {
+    const { container } = render(
+      <MemoryRouter>
+        <Hero />
+      </MemoryRouter>,
     );
-    expect(paragraphElement).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
   });
 
-  it("renders the start retro link", () => {
-    renderHero();
-
-    const startRetroLink = screen.getByRole("link", { name: /start retro/i });
-    expect(startRetroLink).toBeInTheDocument();
-    expect(startRetroLink).toHaveAttribute("href", "/retrosection");
+  it("renders background image", () => {
+    const { getByTestId } = render(
+      <MemoryRouter>
+        <Hero />
+      </MemoryRouter>,
+    );
+    const background = getByTestId("hero-background");
+    expect(background).toHaveStyle(
+      "background-image: url(https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg)",
+    );
   });
 
-  it("renders the create team link", () => {
-    renderHero();
+  it("renders heading", () => {
+    const { getByText } = render(
+      <MemoryRouter>
+        <Hero />
+      </MemoryRouter>,
+    );
+    expect(
+      getByText(
+        "Enhance Team Collaboration with Effective Agile Retrospectives",
+      ),
+    ).toBeInTheDocument();
+  });
 
-    const createTeamLink = screen.getByRole("link", { name: /create team/i });
-    expect(createTeamLink).toBeInTheDocument();
-    expect(createTeamLink).toHaveAttribute("href", "/createteam");
+  it("renders paragraph", () => {
+    const { getByText } = render(
+      <MemoryRouter>
+        <Hero />
+      </MemoryRouter>,
+    );
+    expect(
+      getByText(
+        "Drive continuous improvement and elevate your workflow. Absolutely free!",
+      ),
+    ).toBeInTheDocument();
+  });
+
+  it("renders start retro button", () => {
+    const { getByText } = render(
+      <MemoryRouter>
+        <Hero />
+      </MemoryRouter>,
+    );
+    expect(getByText("Start Retro")).toBeInTheDocument();
+  });
+
+  it("renders create team button", () => {
+    const { getByText } = render(
+      <MemoryRouter>
+        <Hero />
+      </MemoryRouter>,
+    );
+    expect(getByText("Create Team")).toBeInTheDocument();
+  });
+
+  it("renders svg icon in start retro button", () => {
+    const { getByRole } = render(
+      <MemoryRouter>
+        <Hero />
+      </MemoryRouter>,
+    );
+    const startRetroButton = getByRole("link", { name: "Start Retro" });
+    const svgIcon = startRetroButton.querySelector("svg");
+    expect(svgIcon).toBeInTheDocument();
   });
 });

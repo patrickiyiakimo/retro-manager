@@ -1,51 +1,79 @@
-import { render, screen } from "@testing-library/react";
+import React from "react";
+import { render, fireEvent, waitFor } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import Footer from "../Footer";
-import { BrowserRouter } from "react-router-dom";
 
-const renderFooter = () => {
-  return render(
-    <BrowserRouter>
-    <Footer />
-    </BrowserRouter>
-  )
-}
-
-describe("Footer Component", () => {
-  it("renders the footer and sub-link", () => {
- renderFooter()
-
-    const altText = screen.getByAltText("logoipsum-Logo");
-    expect(altText).toBeInTheDocument()
+describe("Footer component", () => {
+  it("renders correctly", () => {
+    const { container } = render(
+      <MemoryRouter>
+        <Footer />
+      </MemoryRouter>,
+    );
+    expect(container).toMatchSnapshot();
   });
-  
-  it("it renders the navigation links", () => {
-    renderFooter()
 
-    const retroLink = screen.getByText(/comments/i)
-    const xLink = screen.getByText(/#/i)
-    const gitHubLink = screen.getByText(/#/i)
-    const discordLink = screen.getByText(/#/i)
-    const privacyLink = screen.getByText(/#/i)
-    const termsLink = screen.getByText(/#/i)
-    const retroManagerLink = screen.getByText(/#/i)
-    const facebookLink = screen.getByText(/#/i)
-    const discordCommunityLink = screen.getByText(/#/i)
-    const twitterPageLink = screen.getByText(/#/i)
-    const githubAccountLink = screen.getByText(/#/i)
-    const dribbleLink = screen.getByText(/#/i)
+  it("renders logo and text", () => {
+    const { getByText, getByAltText } = render(
+      <MemoryRouter>
+        <Footer />
+      </MemoryRouter>,
+    );
+    expect(getByText("RM")).toBeInTheDocument();
+    expect(getByAltText("logoipsum-Logo")).toBeInTheDocument();
+  });
 
-    expect(retroLink).toBeInTheDocument()
-    expect(xLink).toBeInTheDocument()
-    expect(gitHubLink).toBeInTheDocument()
-    expect(discordLink).toBeInTheDocument()
-    expect(privacyLink).toBeInTheDocument()
-    expect(termsLink).toBeInTheDocument();
-    expect(retroManagerLink).toBeInTheDocument();
-    expect(facebookLink).toBeInTheDocument();
-    expect(discordCommunityLink).toBeInTheDocument();
-    expect(twitterPageLink).toBeInTheDocument();
-    expect(githubAccountLink).toBeInTheDocument();
-    expect(dribbleLink).toBeInTheDocument();
-  })
-})
+  it("renders resources links", () => {
+    const { getByText } = render(
+      <MemoryRouter>
+        <Footer />
+      </MemoryRouter>,
+    );
+    expect(getByText("Resources")).toBeInTheDocument();
+    expect(getByText("Retro Manager")).toBeInTheDocument();
+    expect(getByText("X (Twitter)")).toBeInTheDocument();
+  });
 
+  it("renders follow us links", () => {
+    const { getByText } = render(
+      <MemoryRouter>
+        <Footer />
+      </MemoryRouter>,
+    );
+    expect(getByText("Follow us")).toBeInTheDocument();
+    expect(getByText("Github")).toBeInTheDocument();
+    expect(getByText("Discord")).toBeInTheDocument();
+  });
+
+  it("renders legal links", () => {
+    const { getByText } = render(
+      <MemoryRouter>
+        <Footer />
+      </MemoryRouter>,
+    );
+    expect(getByText("Legal")).toBeInTheDocument();
+    expect(getByText("Privacy Policy")).toBeInTheDocument();
+    expect(getByText("Terms & Conditions")).toBeInTheDocument();
+  });
+
+  it("renders copyright text", () => {
+    const { getByText } = render(
+      <MemoryRouter>
+        <Footer />
+      </MemoryRouter>,
+    );
+    expect(getByText("2024")).toBeInTheDocument();
+    expect(getByText("Retro Manager")).toBeInTheDocument();
+    expect(getByText("All Rights Reserved.")).toBeInTheDocument();
+  });
+
+  it("renders social media links", () => {
+    const { getAllByRole } = render(
+      <MemoryRouter>
+        <Footer />
+      </MemoryRouter>,
+    );
+    const links = getAllByRole("link");
+    expect(links.length).toBe(5);
+  });
+});

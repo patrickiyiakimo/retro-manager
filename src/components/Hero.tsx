@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Hero: React.FC = () => {
   return (
     <div>
-      <section className="mb-20 bg-gray-700 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-center bg-no-repeat bg-blend-multiply">
+      <section data-testid="hero-background" className="mb-20 bg-gray-700 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-center bg-no-repeat bg-blend-multiply">
         <div className="mx-auto max-w-screen-xl px-4 py-24 text-center lg:py-56">
           <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
             Enhance Team Collaboration with Effective Agile Retrospectives
