@@ -1,5 +1,6 @@
 import React from "react";
 import InviteTeamModal from "./InviteTeamModal";
+import InvitesTable from "./InvitesTable";
 
 export default function InviteTeamMembers() {
   return (
@@ -13,6 +14,9 @@ export default function InviteTeamMembers() {
         </p>
         <div className="items-center justify-center space-y-4 sm:flex sm:space-x-4 sm:space-y-0 rtl:space-x-reverse">
           <InviteTeamModal />
+        </div>
+        <div>
+          <InvitesTable />
         </div>
       </div>
     </div>
