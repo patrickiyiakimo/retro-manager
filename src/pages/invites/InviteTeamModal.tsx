@@ -17,7 +17,7 @@ export default function InviteTeamModal() {
         className="block rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         type="button"
       >
-       + Invite Team Members
+        + Invite Team Members
       </button>
 
       {/* Modal */}
@@ -25,7 +25,7 @@ export default function InviteTeamModal() {
         <div
           id="authentication-modal"
           aria-hidden="true"
-          className="fixed inset-0 z-50 flex h-full w-full items-center justify-center bg-black bg-opacity-50"
+          className="fixed inset-0 z-50 flex size-full items-center justify-center bg-black bg-opacity-50"
         >
           <div className="relative w-full max-w-md p-4">
             <div className="relative rounded-lg bg-white shadow dark:bg-gray-700">
@@ -37,7 +37,7 @@ export default function InviteTeamModal() {
                 <button
                   onClick={toggleModal}
                   type="button"
-                  className="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
+                  className="ms-auto inline-flex size-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
                 >
                   <svg
                     className="h-3 w-3"
