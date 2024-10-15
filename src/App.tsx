@@ -11,6 +11,7 @@ import RetroSection from "./pages/RetroSection";
 import SignUp from "./pages/SignUp";
 import CreateTeam from "./pages/CreateTeam";
 import RetroDashboard from "./pages/RetroDashboard";
+import InviteTeamMembers from "./pages/InviteTeamMembers";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
           <Route path="/retrosection" element={<RetroSection />} />
           <Route path="/createteam" element={<CreateTeam />} />
           <Route path="/retrodashboard" element={<RetroDashboard />} />
+          <Route path="/inviteteam" element={<InviteTeamMembers />} />
         </Routes>
 
         <Footer />
