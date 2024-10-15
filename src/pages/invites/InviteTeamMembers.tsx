@@ -9,7 +9,7 @@ export default function InviteTeamMembers() {
         <h5 className="mb-2 text-3xl font-bold text-gray-900 dark:text-white">
           Work fast from anywhere
         </h5>
-        <p className="mb-5 text-base text-gray-500 dark:text-gray-400 sm:text-lg">
+        <p className="mb-5 text-base text-gray-500 dark:text-white sm:text-lg">
           Collaborate with teams from anywhere in the world
         </p>
         <div className="items-center justify-center space-y-4 sm:flex sm:space-x-4 sm:space-y-0 rtl:space-x-reverse">
