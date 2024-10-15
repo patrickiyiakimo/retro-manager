@@ -3,12 +3,12 @@ import React from 'react'
 export default function InvitesTable() {
   return (
     <div>
-      <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-20">
+      <div className="relative mt-20 overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-full text-left text-sm text-gray-500 dark:text-gray-400 rtl:text-right">
-          <thead className="bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
+          <thead className="bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-white">
             <tr>
               <th scope="col" className="p-4">
-             Image  
+                Image
               </th>
               <th scope="col" className="px-6 py-3">
                 Email
@@ -21,8 +21,8 @@ export default function InvitesTable() {
               </th>
             </tr>
           </thead>
-          <tbody>
-            <tr className="border-b bg-white hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600">
+          <tbody className="text-white">
+            <tr className="border-b bg-white hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600 ">
               <th
                 scope="row"
                 className="flex items-center whitespace-nowrap px-6 py-4 text-gray-900 dark:text-white"
@@ -35,9 +35,7 @@ export default function InvitesTable() {
                 <div className="ps-3"></div>
               </th>
               <td className="px-6 py-4">
-                <div className="font-normal text-gray-500">
-                  testing@gmail.com
-                </div>
+                <div className="font-normal text-white">testing@gmail.com</div>
               </td>
               <td className="px-6 py-4">Invited</td>
               {/* <td className="px-6 py-4">Invited</td> */}
