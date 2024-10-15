@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { HiDotsHorizontal } from "react-icons/hi";
+
 
 export default function InviteTeamModal() {
   // State to manage modal visibility
@@ -17,7 +19,7 @@ export default function InviteTeamModal() {
         className="block rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         type="button"
       >
-        . . .
+        <HiDotsHorizontal />
       </button>
 
       {/* Modal */}
@@ -57,9 +59,13 @@ export default function InviteTeamModal() {
 
               {/* Modal body */}
               <div className="p-5 md:p-5 ">
-                <button className="block mb-4 text-xl">Resend Invitation</button>
+                <button className="mb-4 block text-xl">
+                  Resend Invitation
+                </button>
 
-                <button className="text-red-400 text-xl">Cancel Invitation</button>
+                <button className="text-xl text-red-400">
+                  Cancel Invitation
+                </button>
               </div>
             </div>
           </div>
