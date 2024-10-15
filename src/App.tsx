@@ -11,7 +11,7 @@ import RetroSection from "./pages/RetroSection";
 import SignUp from "./pages/SignUp";
 import CreateTeam from "./pages/CreateTeam";
 import RetroDashboard from "./pages/RetroDashboard";
-import InviteTeamMembers from "./pages/InviteTeamMembers";
+import InviteTeamMembers from "./pages/invites/InviteTeamMembers";
 
 function App() {
   return (
