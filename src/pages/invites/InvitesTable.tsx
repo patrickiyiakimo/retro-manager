@@ -1,4 +1,5 @@
 import React from 'react'
+import InviteEditModal from './InviteEditModal';
 
 export default function InvitesTable() {
   return (
@@ -40,15 +41,7 @@ export default function InvitesTable() {
               <td className="px-6 py-4">Invited</td>
               {/* <td className="px-6 py-4">Invited</td> */}
               <td className="px-6 py-4">
-                <a
-                  href="#"
-                  type="button"
-                  data-modal-target="editUserModal"
-                  data-modal-show="editUserModal"
-                  className="font-medium text-blue-600 hover:underline dark:text-blue-500"
-                >
-                  Edit user
-                </a>
+               <InviteEditModal />
               </td>
             </tr>
           </tbody>
