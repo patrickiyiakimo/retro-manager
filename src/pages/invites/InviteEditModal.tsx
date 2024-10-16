@@ -27,7 +27,7 @@ export default function InviteTeamModal() {
         <div
           id="authentication-modal"
           aria-hidden="true"
-          className="fixed inset-0 z-50 flex h-full w-full items-center justify-center bg-black bg-opacity-50"
+          className="fixed inset-0 z-50 flex size-full items-center justify-center bg-black/50"
         >
           <div className="relative w-full max-w-md p-24">
             <div className="relative rounded-lg bg-white shadow dark:bg-gray-700">
@@ -39,7 +39,7 @@ export default function InviteTeamModal() {
                   className="ms-auto inline-flex size-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
                 >
                   <svg
-                    className="h-3 w-3"
+                    className="size-3"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

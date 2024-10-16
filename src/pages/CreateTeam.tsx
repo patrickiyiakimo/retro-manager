@@ -4,11 +4,18 @@ export default function CreateTeam() {
   return (
     <div className="min-h-screen pt-72 md:pt-52">
       <div className="flex items-center justify-center">
-        <div className=" p-10 rounded-lg w-96 border-2 dark:border-gray-700">
+        <div className=" w-96 rounded-lg border-2 p-10 dark:border-gray-700">
           <form>
-            <label className="block text-xl font-bold pb-2 dark:text-white">Generate Team ID</label>
-            <input type="text" className="w-full rounded-lg dark:bg-gray-600 border-gray-600 " />
-            <button className="bg-blue-700 text-white w-full hover:bg-blue-600 px-10 py-3 rounded-md mt-4 font-bold">Create</button>
+            <label className="block pb-2 text-xl font-bold dark:text-white">
+              Generate Team ID
+            </label>
+            <input
+              type="text"
+              className="w-full rounded-lg border-gray-600 dark:bg-gray-600 "
+            />
+            <button className=" mt-4 w-full rounded-md bg-blue-700 px-10 py-3 font-bold text-white hover:bg-blue-600">
+              Create
+            </button>
           </form>
         </div>
       </div>
