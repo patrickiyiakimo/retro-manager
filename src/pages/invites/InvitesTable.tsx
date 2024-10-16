@@ -36,9 +36,9 @@ export default function InvitesTable() {
                 <div className="ps-3"></div>
               </th>
               <td className="px-6 py-4">
-                <div className="font-normal text-white">testing@gmail.com</div>
+                <div className="font-normal text-gray-800 dark:text-white">testing@gmail.com</div>
               </td>
-              <td className="px-6 py-4">Invited</td>
+              <td className="px-6 py-4 text-gray-800 dark:text-white">Invited</td>
               {/* <td className="px-6 py-4">Invited</td> */}
               <td className="px-6 py-4">
                <InviteEditModal />
