@@ -52,17 +52,17 @@ export default function RetroDashboard() {
                 {isModalOpen && (
                   <div
                     id="popup-modal"
-                    className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black bg-opacity-50"
+                    className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/50"
                   >
                     <div className="relative max-w-md p-4">
                       <div className="relative rounded-lg bg-white shadow dark:bg-gray-700">
                         <button
                           type="button"
-                          className="absolute end-2.5 top-3 ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
+                          className="absolute end-2.5 top-3 ms-auto inline-flex size-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
                           onClick={handleModalToggle}
                         >
                           <svg
-                            className="h-3 w-3"
+                            className="size-3"
                             aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -80,7 +80,7 @@ export default function RetroDashboard() {
                         </button>
                         <div className="p-4 text-center md:p-5">
                           <svg
-                            className="mx-auto mb-4 h-12 w-12 text-gray-400 dark:text-gray-200"
+                            className="mx-auto mb-4 size-12 text-gray-400 dark:text-gray-200"
                             aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
