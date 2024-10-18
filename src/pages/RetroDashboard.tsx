@@ -24,7 +24,7 @@ export default function RetroDashboard() {
               <th scope="col" className="px-6 py-3">
                 Participant
               </th>
-               <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-3">
                 Action
               </th>
             </tr>
