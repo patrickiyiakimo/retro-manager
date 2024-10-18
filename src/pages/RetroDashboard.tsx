@@ -3,8 +3,7 @@ import { HiDotsHorizontal } from "react-icons/hi";
 
 export default function RetroDashboard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // Function to toggle the modal open/close state
+  
   const handleModalToggle = () => {
     setIsModalOpen(!isModalOpen);
   };

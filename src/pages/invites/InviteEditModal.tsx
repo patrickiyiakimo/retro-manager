@@ -3,10 +3,10 @@ import { HiDotsHorizontal } from "react-icons/hi";
 
 
 export default function InviteTeamModal() {
-  // State to manage modal visibility
+
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Function to toggle modal visibility
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
