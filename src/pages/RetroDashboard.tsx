@@ -13,7 +13,7 @@ export default function RetroDashboard() {
     <div className="min-h-screen px-5 pt-40">
       <div className="relative overflow-x-auto">
         <table className="w-full text-left text-sm text-gray-500 dark:text-gray-400 rtl:text-right">
-          <thead className="bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
+          <thead className="bg-gray-50 text-xs uppercase text-gray-800 dark:bg-gray-700 dark:text-white">
             <tr>
               <th scope="col" className="px-6 py-3">
                 Name
@@ -37,8 +37,8 @@ export default function RetroDashboard() {
               >
                 Testing Retro
               </th>
-              <td className="px-6 py-4">Today</td>
-              <td className="px-6 py-4">7</td>
+              <td className="px-6 py-4 text-white">Today</td>
+              <td className="px-6 py-4 text-white">7</td>
               <td>
                 <button
                   onClick={handleModalToggle}
@@ -94,7 +94,7 @@ export default function RetroDashboard() {
                               d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                             />
                           </svg>
-                          <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
+                          <h3 className="mb-5 text-lg font-normal text-gray-800 dark:text-white">
                             Are you sure you want to delete this Retro?
                           </h3>
                           <button
