@@ -59,11 +59,11 @@ export default function InviteTeamModal() {
 
               {/* Modal body */}
               <div className="p-5 md:p-5 ">
-                <button className="mb-4 block text-xl">
+                <button className="mb-4 block w-full  rounded-lg bg-blue-600 py-2 text-xl text-white hover:bg-blue-800">
                   Resend Invitation
                 </button>
 
-                <button className="text-xl text-red-400">
+                <button className="w-full  rounded-lg bg-red-500  py-2 text-xl text-white hover:bg-red-600">
                   Cancel Invitation
                 </button>
               </div>
