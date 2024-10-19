@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 
 export default function InviteTeamModal() {
-  // State to manage modal visibility
+
+  const [isLoading, setIsLoading] = useState(false)
+
+  const handleLoading = () => {
+    setIsLoading(!isLoading)
+  }
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Function to toggle modal visibility
@@ -87,12 +93,20 @@ export default function InviteTeamModal() {
                       required
                     />
                   </div>
-                  <button
+                 {isLoading? (<button
                     type="submit"
                     className="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   >
+                    Submitting...
+                  </button>)
+                :((<button
+                    type="submit"
+                    className="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                 onClick={handleLoading}
+                    >
                     Submit
-                  </button>
+                  </button>))  
+                }
                 </form>
               </div>
             </div>
