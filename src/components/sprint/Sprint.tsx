@@ -3,7 +3,7 @@ import React from "react";
 interface SprintProps {
   sprintDetails: {
     id: number;
-    Icon: React.ElementType; // Icon is a React component
+    Icon: React.ElementType;
     title: string;
     body: string;
   }[];
