@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { validationSchema } from "../utilities/SignupValidation"; 
-
+import { validationSchema } from "../utilities/validators";
 
 interface LogInFormValues {
   email: string;
   password: string;
   remember: boolean;
 }
-
 
 const LogIn: React.FC = () => {
   const [isLogin, setIsLogin] = useState(false);

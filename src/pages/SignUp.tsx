@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { validationSchema } from "../utilities/SignupValidation"; 
-
+import { validationSchema } from "../utilities/validators";
 
 interface SignUpFormValues {
   name: string;
@@ -10,7 +9,6 @@ interface SignUpFormValues {
   password: string;
   remember: boolean;
 }
-
 
 const SignUp: React.FC = () => {
   const [isSigningUp, setIsSigningUp] = useState(false);
@@ -20,8 +18,8 @@ const SignUp: React.FC = () => {
     { setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void },
   ) => {
     console.log(values);
-    setIsSigningUp(true); 
-    setSubmitting(false); 
+    setIsSigningUp(true);
+    setSubmitting(false);
   };
 
   return (
