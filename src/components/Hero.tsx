@@ -1,10 +1,45 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 const Hero: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const sectionElement = sectionRef.current;
+
+    if (!sectionElement) return;
+
+    // IntersectionObserver for lazy loading the background image
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            sectionElement.style.backgroundImage =
+              "url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')";
+            observer.unobserve(sectionElement);
+          }
+        });
+      },
+      { threshold: 0.1 }, // Load the image when 10% of the section is in view
+    );
+
+    observer.observe(sectionElement);
+
+    return () => {
+      if (sectionElement) {
+        observer.unobserve(sectionElement);
+      }
+    };
+  }, []);
+
   return (
     <div>
-      <section data-testid="hero-background" className="mb-20 bg-gray-700 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-center bg-no-repeat bg-blend-multiply">
+      <section
+        ref={sectionRef}
+        data-testid="hero-background"
+        className="mb-20 bg-gray-700 bg-center bg-no-repeat bg-blend-multiply"
+        style={{ minHeight: "500px" }} // Placeholder for the height until the image loads
+      >
         <div className="mx-auto max-w-screen-xl px-4 py-24 text-center lg:py-56">
           <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
             Enhance Team Collaboration with Effective Agile Retrospectives
@@ -20,7 +55,7 @@ const Hero: React.FC = () => {
             >
               Start Retro
               <svg
-                className="ms-2 h-3.5 w-3.5 rtl:rotate-180"
+                className="ms-2 size-3.5 rtl:rotate-180"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -28,9 +63,9 @@ const Hero: React.FC = () => {
               >
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M1 5h12m0 0L9 1m4 4L9 9"
                 />
               </svg>
