@@ -7,7 +7,7 @@ describe("Hero component", () => {
   it("renders background image", () => {
     const { getByTestId } = render(
       <MemoryRouter>
-        <Hero /
+        <Hero />
       </MemoryRouter>,
     );
     const background = getByTestId("hero-background");
