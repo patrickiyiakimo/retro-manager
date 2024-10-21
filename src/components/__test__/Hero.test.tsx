@@ -3,8 +3,7 @@ import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Hero from "../Hero";
 
-describe("Hero component", () => 
- 
+describe("Hero component", () => {
   it("renders background image", () => {
     const { getByTestId } = render(
       <MemoryRouter>
