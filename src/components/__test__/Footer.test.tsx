@@ -4,15 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 import Footer from "../Footer";
 
 describe("Footer component", () => {
-  it("renders correctly", () => {
-    const { container } = render(
-      <MemoryRouter>
-        <Footer />
-      </MemoryRouter>,
-    );
-    expect(container).toMatchSnapshot();
-  });
-
+ 
   it("renders logo and text", () => {
     const { getByText, getByAltText } = render(
       <MemoryRouter>

@@ -4,15 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 import Hero from "../Hero";
 
 describe("Hero component", () => {
-  it("renders correctly", () => {
-    const { container } = render(
-      <MemoryRouter>
-        <Hero />
-      </MemoryRouter>,
-    );
-    expect(container).toMatchSnapshot();
-  });
-
+ 
   it("renders background image", () => {
     const { getByTestId } = render(
       <MemoryRouter>

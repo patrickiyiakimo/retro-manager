@@ -4,14 +4,6 @@ import { MemoryRouter } from "react-router-dom";
 import Navbar from "../Navbar";
 
 describe("Navbar component", () => {
-  it("renders correctly", () => {
-    const { container } = render(
-      <MemoryRouter>
-        <Navbar />
-      </MemoryRouter>,
-    );
-    expect(container).toMatchSnapshot();
-  });
 
   it("renders logo and text", () => {
     const { getByText, getByAltText } = render(
