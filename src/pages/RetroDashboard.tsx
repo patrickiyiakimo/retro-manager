@@ -36,8 +36,8 @@ export default function RetroDashboard() {
               >
                 Testing Retro
               </th>
-              <td className="px-6 py-4 text-white">Today</td>
-              <td className="px-6 py-4 text-white">7</td>
+              <td className="px-6 py-4 text-gray-900 dark:text-white">Today</td>
+              <td className="px-6 py-4 text-gray-900 dark:text-white">7</td>
               <td>
                 <button
                   onClick={handleModalToggle}
