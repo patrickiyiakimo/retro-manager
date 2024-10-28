@@ -8,7 +8,7 @@ export const inviteteam = async (inviteTeam: InviteTeam): Promise<any> => {
     const response = await fetch(
       "https://retro-manager-server.vercel.app/invites",
       {
-        method: "POST",
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
