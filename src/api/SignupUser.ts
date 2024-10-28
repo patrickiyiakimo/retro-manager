@@ -7,16 +7,16 @@ interface UserData{
 
 export const signup = async (userData: UserData): Promise<any> => {
   try {
-    const response = await fetch(
-      "https://retro-manager-server.vercel.app/register",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      },
-    );
+   const response = await fetch(
+     "https://retro-manager-server.vercel.app/register",
+     {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+       },
+       body: JSON.stringify(userData),
+     },
+   );
 
     if (!response.ok) {
       const errorData = await response.json(); 
@@ -26,7 +26,7 @@ export const signup = async (userData: UserData): Promise<any> => {
     const data = await response.json(); 
     return data;
   } catch (error) {
-    console.error("Error message:", error);
+    console.log("Error message:", error);
     throw error; 
   }
 };
