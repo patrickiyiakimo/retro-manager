@@ -1,18 +1,35 @@
 import React, { useState } from "react";
+import { inviteteam } from "../../api/InviteTeam"; // Import your API function
 
 export default function InviteTeamModal() {
-
-  const [isLoading, setIsLoading] = useState(false)
-
-  const handleLoading = () => {
-    setIsLoading(!isLoading)
-  }
-
+  const [isLoading, setIsLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [uuid, setUuid] = useState("");
 
-  // Function to toggle modal visibility
+  
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      // Call the invite API
+      const response = await inviteteam({
+        invitedEmail: email,
+        uuid: Number(uuid),
+      });
+      console.log("Invite successful:", response);
+      // Optionally, close the modal or show a success message here
+    } catch (error) {
+      console.error("Error sending invite:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -31,7 +48,7 @@ export default function InviteTeamModal() {
         <div
           id="authentication-modal"
           aria-hidden="true"
-          className="fixed inset-0 z-50 flex size-full items-center justify-center bg-black/50"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
         >
           <div className="relative w-full max-w-md p-4">
             <div className="relative rounded-lg bg-white shadow dark:bg-gray-700">
@@ -66,15 +83,15 @@ export default function InviteTeamModal() {
 
               {/* Modal body */}
               <div className="p-4 md:p-5">
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   <div>
                     <label className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
                       Team Member Email
                     </label>
                     <input
                       type="email"
-                      name="email"
-                      id="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder:text-gray-200"
                       placeholder="name@company.com"
                       required
@@ -85,19 +102,20 @@ export default function InviteTeamModal() {
                       Team ID
                     </label>
                     <input
-                      type="password"
-                      name="password"
-                      id="password"
-                      placeholder="••••••••"
+                      type="text"
+                      value={uuid}
+                      onChange={(e) => setUuid(e.target.value)}
                       className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder:text-gray-200"
+                      placeholder="Enter Team ID"
                       required
                     />
                   </div>
-                  {isLoading ? (
-                    <button
-                      type="submit"
-                      className="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                    >
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  >
+                    {isLoading ? (
                       <svg
                         aria-hidden="true"
                         className="inline size-5 animate-spin fill-blue-600 text-gray-200 dark:text-gray-600"
@@ -114,16 +132,10 @@ export default function InviteTeamModal() {
                           fill="currentFill"
                         />
                       </svg>
-                    </button>
-                  ) : (
-                    <button
-                      type="submit"
-                      className="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                      onClick={handleLoading}
-                    >
-                      Submit
-                    </button>
-                  )}
+                    ) : (
+                      "Submit"
+                    )}
+                  </button>
                 </form>
               </div>
             </div>
