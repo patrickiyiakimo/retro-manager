@@ -30,10 +30,10 @@ const SignUp: React.FC = () => {
     try {
       const response = await signup(userData);
       console.log("Signup successful:", response);
-      // Handle successful signup (e.g., redirect, show a success message, etc.)
+      
     } catch (error) {
       console.log("Signup error:", error);
-      // Handle error (e.g., show an error message)
+  
     } finally {
       setSubmitting(false);
       setIsSigningUp(false);

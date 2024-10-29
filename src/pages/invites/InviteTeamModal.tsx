@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { inviteteam } from "../../api/InviteTeam"; // Import your API function
+import { inviteteam } from "../../api/InviteTeam"; 
 
 export default function InviteTeamModal() {
   const [isLoading, setIsLoading] = useState(false);
@@ -12,19 +12,17 @@ export default function InviteTeamModal() {
     setIsModalOpen(!isModalOpen);
   };
 
-  // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
     try {
-      // Call the invite API
       const response = await inviteteam({
         invitedEmail: email,
         uuid: Number(uuid),
       });
       console.log("Invite successful:", response);
-      // Optionally, close the modal or show a success message here
+      
     } catch (error) {
       console.error("Error sending invite:", error);
     } finally {
