@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { validationSchema } from "../utilities/validators";
+import {login} from "../api/LoginUser"
 
 
 interface LogInFormValues {
@@ -13,13 +14,26 @@ interface LogInFormValues {
 const LogIn: React.FC = () => {
   const [isLogin, setIsLogin] = useState(false);
 
-  const handleLogIn = (
+  const handleLogIn = async (
     values: LogInFormValues,
     { setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void },
   ) => {
-    console.log(values);
-    setIsLogin(true);
-    setSubmitting(false);
+    setSubmitting(true);
+
+    const userData = {
+      email: values.email,
+      password: values.password,
+    };
+
+    try {
+      const response = await login(userData);
+      console.log("LogIn successful:", response)
+    } catch (error) {
+      console.log("Login error:", error)
+    } finally {
+      setSubmitting(false)
+      setIsLogin(false)
+    }
   };
 
   return (
