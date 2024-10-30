@@ -5,16 +5,13 @@ interface InviteTeam {
 
 export const inviteteam = async (inviteTeam: InviteTeam): Promise<any> => {
   try {
-    const response = await fetch(
-      "https://retro-manager-server.vercel.app/invites",
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(inviteTeam),
+    const response = await fetch("http://localhost:2500/invites", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
-    );
+      body: JSON.stringify(inviteTeam),
+    });
 
     if (!response.ok) {
       const errorData = await response.json();

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { validationSchema } from "../utilities/validators"; 
-import { signup } from "../api/SignupUser"; 
+import { validationSchema } from "../utilities/validators";
+import { signup } from "../api/SignupUser";
 
 
 interface SignUpFormValues {
@@ -22,7 +22,7 @@ const SignUp: React.FC = () => {
     setIsSigningUp(true);
 
     const userData = {
-      username: values.name, 
+      username: values.name,
       email: values.email,
       password: values.password,
     };
