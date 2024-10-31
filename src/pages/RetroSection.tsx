@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Modal from "./Modal";
+import RetroStandup from "./RetroStandup";
 
 export default function RetroSection() {
   const currentDate = new Date();
@@ -108,6 +109,7 @@ export default function RetroSection() {
           </button>
         </div>
       </form>
+      <RetroStandup />
       <Modal />
     </div>
   );
