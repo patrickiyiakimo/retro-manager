@@ -21,8 +21,7 @@ export default function RetroSection() {
                id="whatWentWell"
                className="mt-2 w-full border-2 bg-white  px-0 pl-2 text-sm text-gray-900 focus:ring-0 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
                placeholder="comment something..."
-               // value={formData.whatWentWell}
-               // onChange={handleChange}
+              
              ></textarea>
            </div>
          </div>
@@ -34,8 +33,7 @@ export default function RetroSection() {
                id="whatDidNotGoWell"
                className="mt-2 w-full border-2 bg-white px-0 pl-2 text-sm text-gray-900 focus:ring-0 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
                placeholder="comment something..."
-               // value={formData.whatDidNotGoWell}
-               // onChange={handleChange}
+              
              ></textarea>
            </div>
          </div>
@@ -47,8 +45,7 @@ export default function RetroSection() {
                id="workingOn"
                className="mt-2 w-full border-2 bg-white px-0 pl-2 text-sm text-gray-900 focus:ring-0 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
                placeholder="comment something..."
-               // value={formData.workingOn}
-               // onChange={handleChange}
+              
              ></textarea>
            </div>
          </div>
@@ -60,8 +57,7 @@ export default function RetroSection() {
                id="improvement"
                className="mt-2 w-full border-2 bg-white px-0 pl-2 text-sm text-gray-900 focus:ring-0 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
                placeholder="comment something..."
-               // value={formData.improvement}
-               // onChange={handleChange}
+             
              ></textarea>
            </div>
          </div>
