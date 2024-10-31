@@ -27,7 +27,7 @@ export default function RetroSection() {
         },
         body: JSON.stringify(body),
       });
-
+     
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message || "Failed to submit standup");

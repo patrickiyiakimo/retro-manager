@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Card } from "flowbite-react";
 
 interface RetroItem {
-  id: number;
+  standup_id: number;
   accomplished: string;
   not_well: string;
   working_on: string;
@@ -10,8 +10,28 @@ interface RetroItem {
 }
 
 export default function RetroStandup() {
-  // Specify the type of the retro state as an array of RetroItem
   const [retro, setRetro] = useState<RetroItem[]>([]);
+
+  const deleteRetro = async (standup_id: number) => {
+    try {
+      const response = await fetch(
+        `http://localhost:2500/standups/${standup_id}`,
+        {
+          method: "DELETE",
+        },
+      );
+
+      if (response.ok) {
+        setRetro((prevRetro) =>
+          prevRetro.filter((item) => item.standup_id !== standup_id),
+        );
+      } else {
+        console.error("Failed to delete item with ID:", standup_id);
+      }
+    } catch (error) {
+      console.error("Error deleting item:", error);
+    }
+  };
 
   const getStandups = async () => {
     try {
@@ -19,7 +39,7 @@ export default function RetroStandup() {
       const jsonData = await response.json();
       setRetro(jsonData);
     } catch (error) {
-      console.error("Error Message", error);
+      console.error("Error fetching standups:", error);
     }
   };
 
@@ -31,10 +51,9 @@ export default function RetroStandup() {
     <div className="space-y-4">
       {retro.map((retroItem) => (
         <div
-          key={retroItem.id}
+          key={retroItem.standup_id}
           className="flex flex-col space-y-4 md:flex-row md:space-x-4"
         >
-          {/* Accomplished Section */}
           <Card className="max-w-sm text-sm">
             <h2 className="text-lg font-semibold text-gray-800 dark:text-white">
               What went well
@@ -43,7 +62,10 @@ export default function RetroStandup() {
               {retroItem.accomplished}
             </p>
             <div className="space-y-2 sm:flex sm:space-x-2 sm:space-y-0">
-              <button className="rounded-lg bg-red-500 px-2 py-2 font-bold text-white">
+              <button
+                className="rounded-lg bg-red-500 px-2 py-2 font-bold text-white"
+                onClick={() => deleteRetro(retroItem.standup_id)}
+              >
                 Delete
               </button>
               <button className="rounded-lg bg-blue-500 px-2 py-2 font-bold text-white">
@@ -52,7 +74,6 @@ export default function RetroStandup() {
             </div>
           </Card>
 
-          {/* Not Well Section */}
           <Card className="max-w-sm text-sm">
             <h2 className="text-lg font-semibold text-gray-800 dark:text-white">
               What did not go well
@@ -60,17 +81,8 @@ export default function RetroStandup() {
             <p className="mb-5 text-sm text-gray-800 dark:text-white sm:text-sm">
               {retroItem.not_well}
             </p>
-            <div className="space-y-2 sm:flex sm:space-x-2 sm:space-y-0">
-              <button className="rounded-lg bg-red-500 px-2 py-2 font-bold text-white">
-                Delete
-              </button>
-              <button className="rounded-lg bg-blue-500 px-2 py-2 font-bold text-white">
-                Edit
-              </button>
-            </div>
           </Card>
 
-          {/* Working On Section */}
           <Card className="max-w-sm text-sm">
             <h2 className="text-lg font-semibold text-gray-800 dark:text-white">
               Focus this week
@@ -78,17 +90,8 @@ export default function RetroStandup() {
             <p className="mb-5 text-sm text-gray-800 dark:text-white sm:text-sm">
               {retroItem.working_on}
             </p>
-            <div className="space-y-2 sm:flex sm:space-x-2 sm:space-y-0">
-              <button className="rounded-lg bg-red-500 px-2 py-2 font-bold text-white">
-                Delete
-              </button>
-              <button className="rounded-lg bg-blue-500 px-2 py-2 font-bold text-white">
-                Edit
-              </button>
-            </div>
           </Card>
 
-          {/* Improvement Section */}
           <Card className="max-w-sm text-sm">
             <h2 className="text-lg font-semibold text-gray-800 dark:text-white">
               Improvement
@@ -96,14 +99,6 @@ export default function RetroStandup() {
             <p className="mb-5 text-sm text-gray-800 dark:text-white sm:text-sm">
               {retroItem.improvement}
             </p>
-            <div className="space-y-2 sm:flex sm:space-x-2 sm:space-y-0">
-              <button className="rounded-lg bg-red-500 px-2 py-2 font-bold text-white">
-                Delete
-              </button>
-              <button className="rounded-lg bg-blue-500 px-2 py-2 font-bold text-white">
-                Edit
-              </button>
-            </div>
           </Card>
         </div>
       ))}
