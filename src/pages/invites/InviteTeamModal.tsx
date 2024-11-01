@@ -16,15 +16,15 @@ export default function InviteTeamModal({ email, uuid }: InviteTeamModalProps) {
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
-    setError(""); // Clear error when modal is toggled
-    setSuccessMessage(""); // Clear success message when modal is toggled
+    setError(""); 
+    setSuccessMessage("");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    setError(""); // Clear any previous errors
-    setSuccessMessage(""); // Clear previous success message
+    setError(""); 
+    setSuccessMessage(""); 
 
     // Validate input
     if (!teamEmail || !teamUuid) {
