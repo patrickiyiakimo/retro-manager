@@ -9,10 +9,10 @@ interface InviteTeamModalProps {
 export default function InviteTeamModal({ email, uuid }: InviteTeamModalProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [teamEmail, setTeamEmail] = useState(email); // Use email prop
-  const [teamUuid, setTeamUuid] = useState(uuid); // Use uuid prop
-  const [error, setError] = useState(""); // State for error messages
-  const [successMessage, setSuccessMessage] = useState(""); // State for success messages
+  const [teamEmail, setTeamEmail] = useState(email); 
+  const [teamUuid, setTeamUuid] = useState(uuid); 
+  const [error, setError] = useState(""); 
+  const [successMessage, setSuccessMessage] = useState(""); 
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
