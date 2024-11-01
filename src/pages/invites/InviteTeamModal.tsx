@@ -39,12 +39,12 @@ export default function InviteTeamModal({ email, uuid }: InviteTeamModalProps) {
         uuid: teamUuid,
       });
       console.log("Invite successful:", response);
-      setSuccessMessage("Invite sent successfully!"); // Success feedback
-      setTeamEmail(""); // Clear email input
-      setTeamUuid(""); // Clear uuid input
+      setSuccessMessage("Invite sent successfully!"); 
+      setTeamEmail(""); 
+      setTeamUuid(""); 
     } catch (error) {
       console.error("Error sending invite:", error);
-      setError("Error sending invite. Please try again."); // Error feedback
+      setError("Error sending invite. Please try again."); 
     } finally {
       setIsLoading(false);
     }
