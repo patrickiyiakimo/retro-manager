@@ -55,8 +55,8 @@
 import InviteEditModal from "./InviteEditModal";
 
 export default function InvitesTable() {
-  const email = "testing@gmail.com"; // Example email, replace with your data source
-  const firstLetter = email.charAt(0).toUpperCase(); // Get the first letter and convert to uppercase
+  const email = "testing@gmail.com";
+  const firstLetter = email.charAt(0).toUpperCase();
 
   return (
     <div>
@@ -85,7 +85,7 @@ export default function InvitesTable() {
                 className="flex items-center whitespace-nowrap px-6 py-4 text-gray-900 dark:text-white"
               >
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 font-bold text-white">
-                  {firstLetter} {/* Display the first letter as avatar */}
+                  {firstLetter} 
                 </div>
                 <div className="ps-3"></div>
               </th>
@@ -107,3 +107,4 @@ export default function InvitesTable() {
     </div>
   );
 }
+
