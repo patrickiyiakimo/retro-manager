@@ -39,7 +39,6 @@ export default function InvitesTable() {
                 <div className="font-normal text-gray-800 dark:text-white">testing@gmail.com</div>
               </td>
               <td className="px-6 py-4 text-gray-800 dark:text-white">Invited</td>
-              {/* <td className="px-6 py-4">Invited</td> */}
               <td className="px-6 py-4">
                <InviteEditModal />
               </td>
