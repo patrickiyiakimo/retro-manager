@@ -3,6 +3,9 @@ import InviteTeamModal from "./InviteTeamModal";
 import InvitesTable from "./InvitesTable";
 
 export default function InviteTeamMembers() {
+  const email = "example@email.com";
+  const uuid = "12345678-1234-1234-1234-123456789012"; // Replace this with a real UUID
+
   return (
     <div className="flex min-h-screen items-center justify-center px-20">
       <div className="w-full rounded-lg border border-gray-200 bg-white p-4 text-center shadow dark:border-gray-700 dark:bg-gray-800 sm:p-8">
@@ -13,7 +16,7 @@ export default function InviteTeamMembers() {
           Collaborate with teams from anywhere in the world
         </p>
         <div className="items-center justify-center space-y-4 sm:flex sm:space-x-4 sm:space-y-0 rtl:space-x-reverse">
-          <InviteTeamModal />
+          <InviteTeamModal email={email} uuid={uuid} />
         </div>
         <div>
           <InvitesTable />

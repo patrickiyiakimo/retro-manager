@@ -1,6 +1,6 @@
 interface InviteTeam {
   invitedEmail: string;
-  uuid: number;
+  uuid: string;
 }
 
 export const inviteteam = async (inviteTeam: InviteTeam): Promise<any> => {
