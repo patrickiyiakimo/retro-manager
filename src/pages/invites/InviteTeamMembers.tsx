@@ -3,8 +3,8 @@ import InviteTeamModal from "./InviteTeamModal";
 import InvitesTable from "./InvitesTable";
 
 export default function InviteTeamMembers() {
-  const email = "example@email.com";
-  const uuid = "12345678-1234-1234-1234-123456789012"; // Replace this with a real UUID
+  const email = "";
+  const uuid = ""; 
 
   return (
     <div className="flex min-h-screen items-center justify-center px-20">
