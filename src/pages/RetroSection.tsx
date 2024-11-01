@@ -15,9 +15,8 @@ export default function RetroSection() {
   const [working_on, setWorking_on] = useState("");
   const [improvement, setImprovement] = useState("");
 
-
   const onSubmitStandup = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); 
+    e.preventDefault();
     try {
       const body = { accomplished, not_well, working_on, improvement };
       const response = await fetch("http://localhost:2500/standups", {
@@ -27,13 +26,13 @@ export default function RetroSection() {
         },
         body: JSON.stringify(body),
       });
-     
+
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message || "Failed to submit standup");
       }
-
-      const data = await response.json(); 
+      window.location.reload();
+      const data = await response.json();
       console.log("Standup submitted successfully:", data);
       setAccomplished("");
       setNot_well("");

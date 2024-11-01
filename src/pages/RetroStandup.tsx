@@ -7,6 +7,7 @@ interface RetroItem {
   not_well: string;
   working_on: string;
   improvement: string;
+  created_at: string;
 }
 
 export default function RetroStandup() {
@@ -16,9 +17,7 @@ export default function RetroStandup() {
     try {
       const response = await fetch(
         `http://localhost:2500/standups/${standup_id}`,
-        {
-          method: "DELETE",
-        },
+        { method: "DELETE" },
       );
 
       if (response.ok) {
@@ -43,62 +42,57 @@ export default function RetroStandup() {
     }
   };
 
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleString("en-US", {
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+    });
+  };
+
   useEffect(() => {
     getStandups();
   }, []);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-8">
       {retro.map((retroItem) => (
-        <div
-          key={retroItem.standup_id}
-          className="flex flex-col space-y-4 md:flex-row md:space-x-4"
-        >
-          <Card className="max-w-sm text-sm">
-            <h2 className="text-lg font-semibold text-gray-800 dark:text-white">
-              What went well
+        <div key={retroItem.standup_id} className="space-y-4">
+          <Card className="p-6">
+            <h2 className="mb-4 text-xl font-semibold text-gray-800 dark:text-white">
+              Standup for {formatDate(retroItem.created_at)}
             </h2>
-            <p className="mb-5 text-sm text-gray-800 dark:text-white sm:text-sm">
-              {retroItem.accomplished}
-            </p>
-            <div className="space-y-2 sm:flex sm:space-x-2 sm:space-y-0">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
+              {[
+                { title: "What went well", content: retroItem.accomplished },
+                { title: "What did not go well", content: retroItem.not_well },
+                { title: "Focus this week", content: retroItem.working_on },
+                { title: "Improvement", content: retroItem.improvement },
+              ].map(({ title, content }, index) => (
+                <Card key={index} className="p-4">
+                  <h3 className="mb-2 text-lg font-semibold text-gray-800 dark:text-white">
+                    {title}
+                  </h3>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">
+                    {content}
+                  </p>
+                </Card>
+              ))}
+            </div>
+            <div className="mt-6 flex space-x-4">
               <button
-                className="rounded-lg bg-red-500 px-2 py-2 font-bold text-white"
+                className="rounded-lg bg-red-500 px-4 py-2 font-bold text-white hover:bg-red-600"
                 onClick={() => deleteRetro(retroItem.standup_id)}
               >
                 Delete
               </button>
-              <button className="rounded-lg bg-blue-500 px-2 py-2 font-bold text-white">
+              <button className="rounded-lg bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-600">
                 Edit
               </button>
             </div>
-          </Card>
-
-          <Card className="max-w-sm text-sm">
-            <h2 className="text-lg font-semibold text-gray-800 dark:text-white">
-              What did not go well
-            </h2>
-            <p className="mb-5 text-sm text-gray-800 dark:text-white sm:text-sm">
-              {retroItem.not_well}
-            </p>
-          </Card>
-
-          <Card className="max-w-sm text-sm">
-            <h2 className="text-lg font-semibold text-gray-800 dark:text-white">
-              Focus this week
-            </h2>
-            <p className="mb-5 text-sm text-gray-800 dark:text-white sm:text-sm">
-              {retroItem.working_on}
-            </p>
-          </Card>
-
-          <Card className="max-w-sm text-sm">
-            <h2 className="text-lg font-semibold text-gray-800 dark:text-white">
-              Improvement
-            </h2>
-            <p className="mb-5 text-sm text-gray-800 dark:text-white sm:text-sm">
-              {retroItem.improvement}
-            </p>
           </Card>
         </div>
       ))}
