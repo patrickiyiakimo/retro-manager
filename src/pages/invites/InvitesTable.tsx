@@ -1,4 +1,3 @@
-import React from 'react'
 import InviteEditModal from './InviteEditModal';
 
 export default function InvitesTable() {

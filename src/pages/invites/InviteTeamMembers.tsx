@@ -1,4 +1,3 @@
-import React from "react";
 import InviteTeamModal from "./InviteTeamModal";
 import InvitesTable from "./InvitesTable";
 
