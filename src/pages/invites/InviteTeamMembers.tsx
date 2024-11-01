@@ -3,7 +3,7 @@ import InvitesTable from "./InvitesTable";
 
 export default function InviteTeamMembers() {
   const email = "";
-  const uuid = ""; 
+  const uuid = "";
 
   return (
     <div className="flex min-h-screen items-center justify-center px-20">

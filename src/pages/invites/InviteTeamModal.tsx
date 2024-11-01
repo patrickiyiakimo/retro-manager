@@ -9,22 +9,22 @@ interface InviteTeamModalProps {
 export default function InviteTeamModal({ email, uuid }: InviteTeamModalProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [teamEmail, setTeamEmail] = useState(email); 
-  const [teamUuid, setTeamUuid] = useState(uuid); 
-  const [error, setError] = useState(""); 
-  const [successMessage, setSuccessMessage] = useState(""); 
+  const [teamEmail, setTeamEmail] = useState(email);
+  const [teamUuid, setTeamUuid] = useState(uuid);
+  const [error, setError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
-    setError(""); 
+    setError("");
     setSuccessMessage("");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    setError(""); 
-    setSuccessMessage(""); 
+    setError("");
+    setSuccessMessage("");
 
     // Validate input
     if (!teamEmail || !teamUuid) {
@@ -39,12 +39,12 @@ export default function InviteTeamModal({ email, uuid }: InviteTeamModalProps) {
         uuid: teamUuid,
       });
       console.log("Invite successful:", response);
-      setSuccessMessage("Invite sent successfully!"); 
-      setTeamEmail(""); 
-      setTeamUuid(""); 
+      setSuccessMessage("Invite sent successfully!");
+      setTeamEmail("");
+      setTeamUuid("");
     } catch (error) {
       console.error("Error sending invite:", error);
-      setError("Error sending invite. Please try again."); 
+      setError("Error sending invite. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -163,3 +163,180 @@ export default function InviteTeamModal({ email, uuid }: InviteTeamModalProps) {
     </div>
   );
 }
+
+
+
+
+
+
+// import React, { useState } from "react";
+// import { inviteteam } from "../../api/InviteTeam"; // Ensure the path is correct
+
+// interface InviteTeamModalProps {
+//   email: string;
+//   uuid: string;
+//   onAddInvite: (email: string) => void,// Add the onAddInvite prop
+// }
+
+// export default function InviteTeamModal({
+//   email,
+//   uuid,
+//   onAddInvite,
+// }: InviteTeamModalProps) {
+//   const [isLoading, setIsLoading] = useState(false);
+//   const [isModalOpen, setIsModalOpen] = useState(false);
+//   const [teamEmail, setTeamEmail] = useState(email);
+//   const [teamUuid, setTeamUuid] = useState(uuid);
+//   const [error, setError] = useState("");
+//   const [successMessage, setSuccessMessage] = useState("");
+
+//   const toggleModal = () => {
+//     setIsModalOpen(!isModalOpen);
+//     setError("");
+//     setSuccessMessage("");
+//   };
+
+//   const handleSubmit = async (e: React.FormEvent) => {
+//     e.preventDefault();
+//     setIsLoading(true);
+//     setError("");
+//     setSuccessMessage("");
+
+//     // Basic validation
+//     if (!teamEmail || !teamUuid) {
+//       setError("Both fields are required.");
+//       setIsLoading(false);
+//       return;
+//     }
+
+//     try {
+//       const response = await inviteteam({
+//         invitedEmail: teamEmail,
+//         uuid: teamUuid,
+//       });
+//       console.log("Invite successful:", response);
+//       setSuccessMessage("Invite sent successfully!");
+//       onAddInvite(teamEmail); // Add the email to the invitedEmails list
+//       setTeamEmail(""); // Clear email field after success
+//       setTeamUuid(""); // Clear UUID field after success
+//     } catch (error) {
+//       console.error("Error sending invite:", error);
+//       setError("Error sending invite. Please try again.");
+//     } finally {
+//       setIsLoading(false);
+//     }
+//   };
+//   return (
+//     <div>
+//       <button
+//         onClick={toggleModal}
+//         className="block rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+//         type="button"
+//       >
+//         + Invite Team Members
+//       </button>
+
+//       {isModalOpen && (
+//         <div
+//           className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+//           aria-hidden="true"
+//         >
+//           <div className="relative w-full max-w-md p-4">
+//             <div className="relative rounded-lg bg-white shadow dark:bg-gray-700">
+//               <div className="flex items-center justify-between rounded-t border-b p-4 dark:border-gray-600 md:p-5">
+//                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+//                   Invite Team Members
+//                 </h3>
+//                 <button
+//                   onClick={toggleModal}
+//                   type="button"
+//                   className="ms-auto inline-flex items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
+//                 >
+//                   <svg
+//                     className="h-5 w-5"
+//                     xmlns="http://www.w3.org/2000/svg"
+//                     fill="none"
+//                     viewBox="0 0 24 24"
+//                     stroke="currentColor"
+//                     aria-hidden="true"
+//                   >
+//                     <path
+//                       strokeLinecap="round"
+//                       strokeLinejoin="round"
+//                       strokeWidth="2"
+//                       d="M6 18L18 6M6 6l12 12"
+//                     />
+//                   </svg>
+//                   <span className="sr-only">Close modal</span>
+//                 </button>
+//               </div>
+
+//               <div className="p-4 md:p-5">
+//                 <form onSubmit={handleSubmit} className="space-y-4">
+//                   {error && <p className="text-red-600">{error}</p>}
+//                   {successMessage && (
+//                     <p className="text-green-600">{successMessage}</p>
+//                   )}
+//                   <div>
+//                     <label className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+//                       Team Member Email
+//                     </label>
+//                     <input
+//                       type="email"
+//                       value={teamEmail}
+//                       onChange={(e) => setTeamEmail(e.target.value)}
+//                       className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-200"
+//                       placeholder="name@company.com"
+//                       required
+//                     />
+//                   </div>
+//                   <div>
+//                     <label className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+//                       Team ID
+//                     </label>
+//                     <input
+//                       type="text"
+//                       value={teamUuid}
+//                       onChange={(e) => setTeamUuid(e.target.value)}
+//                       className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-200"
+//                       placeholder="Enter Team ID"
+//                       required
+//                     />
+//                   </div>
+//                   <button
+//                     type="submit"
+//                     disabled={isLoading}
+//                     className="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+//                   >
+//                     {isLoading ? (
+//                       <svg
+//                         aria-hidden="true"
+//                         className="inline h-5 w-5 animate-spin text-gray-200 dark:text-gray-600"
+//                         fill="none"
+//                         viewBox="0 0 24 24"
+//                       >
+//                         <circle
+//                           cx="12"
+//                           cy="12"
+//                           r="10"
+//                           stroke="currentColor"
+//                           strokeWidth="4"
+//                         ></circle>
+//                         <path
+//                           fill="currentColor"
+//                           d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+//                         ></path>
+//                       </svg>
+//                     ) : (
+//                       "Send Invite"
+//                     )}
+//                   </button>
+//                 </form>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
