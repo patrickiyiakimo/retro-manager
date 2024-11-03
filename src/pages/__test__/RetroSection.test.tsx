@@ -1,14 +1,14 @@
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import RetroSection from "../RetroSection";
-// import RetroSection from "./RetroSection"; // Adjust the import path as necessary
 
-// Mock the fetch function
+
+
 global.fetch = jest.fn();
 
 describe("RetroSection Component", () => {
   beforeEach(() => {
-    jest.clearAllMocks(); // Clear previous mocks before each test
+    jest.clearAllMocks(); 
   });
 
   test("renders the RetroSection component", () => {

@@ -1,15 +1,14 @@
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { Formik } from "formik";
-import SignUp from "../SignUp"; // Adjust the import path as necessary
+import SignUp from "../SignUp";
 import { signup } from "../../api/SignupUser";
-// import { signup } from "../api/SignupUser"; // Adjust the import path as necessary
 
-jest.mock("../../api/SignupUser "); // Mock the signup API
+jest.mock("../../api/SignupUser ");
 
 describe("SignUp Component", () => {
   beforeEach(() => {
-    jest.clearAllMocks(); // Clear previous mocks before each test
+    jest.clearAllMocks(); 
   });
 
   test("renders the sign up form", () => {
@@ -42,7 +41,7 @@ describe("SignUp Component", () => {
   });
 
   test("submits the form and calls signup API", async () => {
-    (signup as jest.Mock).mockResolvedValueOnce({ success: true }); // Mock a successful signup response
+    (signup as jest.Mock).mockResolvedValueOnce({ success: true });
 
     render(<SignUp />);
 
@@ -68,7 +67,7 @@ describe("SignUp Component", () => {
   });
 
   test("shows a loading state when signing up", async () => {
-    (signup as jest.Mock).mockImplementation(() => new Promise(() => {})); // Mock an ongoing request
+    (signup as jest.Mock).mockImplementation(() => new Promise(() => {}));
 
     render(<SignUp />);
 
@@ -84,11 +83,11 @@ describe("SignUp Component", () => {
 
     fireEvent.click(screen.getByRole("button", { name: /Create an Account/i }));
 
-    expect(screen.getByRole("status")).toBeInTheDocument(); // Check for loading spinner
+    expect(screen.getByRole("status")).toBeInTheDocument();
   });
 
   test("handles signup error", async () => {
-    (signup as jest.Mock).mockRejectedValueOnce(new Error("Signup failed")); // Mock an error response
+    (signup as jest.Mock).mockRejectedValueOnce(new Error("Signup failed"));
 
     render(<SignUp />);
 
@@ -105,8 +104,8 @@ describe("SignUp Component", () => {
     fireEvent.click(screen.getByRole("button", { name: /Create an Account/i }));
 
     await waitFor(() => {
-      expect(screen.queryByRole("status")).not.toBeInTheDocument(); // Check that loading spinner is gone
-      expect(screen.getByText(/Signup failed/i)).toBeInTheDocument(); // Check for error message
+      expect(screen.queryByRole("status")).not.toBeInTheDocument(); 
+      expect(screen.getByText(/Signup failed/i)).toBeInTheDocument(); 
     });
   });
 });
