@@ -1,4 +1,3 @@
-// IconWrapper.tsx
 import React from "react";
 
 interface IconWrapperProps {
