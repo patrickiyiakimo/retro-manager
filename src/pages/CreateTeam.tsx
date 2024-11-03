@@ -1,21 +1,25 @@
 import React, { useState } from "react";
 import { generate_id } from "../api/GenerateTeamId";
+import { FaRegCopy } from "react-icons/fa6";
+import { GrStatusGood } from "react-icons/gr";
 
 export default function CreateTeam() {
   const [uuid, setUuid] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false); 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
+    setCopied(false); 
 
-    const teamId = { uuid: "some-unique-value" }; // Replace with actual value if needed
+    const teamId = { uuid: "some-unique-value" }; 
 
     try {
       const generatedUuid = await generate_id(teamId);
-      setUuid(generatedUuid); 
+      setUuid(generatedUuid);
     } catch (err) {
       setError("Failed to generate Team ID");
     } finally {
@@ -26,7 +30,7 @@ export default function CreateTeam() {
   const handleCopy = () => {
     if (uuid) {
       navigator.clipboard.writeText(uuid);
-      alert("UUID copied to clipboard!");
+      setCopied(true); 
     }
   };
 
@@ -48,12 +52,12 @@ export default function CreateTeam() {
           </form>
           {uuid && (
             <div className="mt-4">
-              <p className="text-lg font-bold">Generated UUID: {uuid}</p>
+              <p className="text-sm  font-semibold">Team ID: {uuid}</p>
               <button
                 onClick={handleCopy}
-                className="mt-2 w-full rounded-md bg-green-500 px-4 py-2 text-white hover:bg-green-400"
+                className="mt-2 w-full flex justify-center items-center rounded-md bg-green-500 px-4 py-2 text-white hover:bg-green-400"
               >
-                Copy UUID
+                {copied ? <GrStatusGood /> : <FaRegCopy />}
               </button>
             </div>
           )}
