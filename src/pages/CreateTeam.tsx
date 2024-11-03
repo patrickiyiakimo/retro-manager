@@ -1,34 +1,5 @@
-// import React from "react";
-
-// export default function CreateTeam() {
-//   return (
-//     <div className="min-h-screen pt-72 md:pt-52">
-//       <div className="flex items-center justify-center">
-//         <div className=" w-96 rounded-lg border-2 p-10 dark:border-gray-700">
-//           <form>
-//             <label className="block pb-2 text-xl font-bold dark:text-white">
-//               Generate Team ID
-//             </label>
-//             <input
-//               type="text"
-//               className="w-full rounded-lg border-gray-600 dark:bg-gray-600 "
-//             />
-//             <button className=" mt-4 w-full rounded-md bg-blue-700 px-10 py-3 font-bold text-white hover:bg-blue-600">
-//               Create
-//             </button>
-//           </form>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-
-
 import React, { useState } from "react";
 import { generate_id } from "../api/GenerateTeamId";
-
 
 export default function CreateTeam() {
   const [uuid, setUuid] = useState<string | null>(null);
@@ -40,12 +11,11 @@ export default function CreateTeam() {
     setLoading(true);
     setError(null);
 
-    // You can pass any necessary data to the backend here
     const teamId = { uuid: "some-unique-value" }; // Replace with actual value if needed
 
     try {
       const generatedUuid = await generate_id(teamId);
-      setUuid(generatedUuid); // Set the generated UUID to state
+      setUuid(generatedUuid); 
     } catch (err) {
       setError("Failed to generate Team ID");
     } finally {
