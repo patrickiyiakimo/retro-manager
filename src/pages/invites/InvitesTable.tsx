@@ -30,7 +30,7 @@ export default function InvitesTable() {
                 scope="row"
                 className="flex items-center whitespace-nowrap px-6 py-4 text-gray-900 dark:text-white"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 font-bold text-white">
+                <div className="flex size-10 items-center justify-center rounded-full bg-blue-500 font-bold text-white">
                   {firstLetter} 
                 </div>
                 <div className="ps-3"></div>

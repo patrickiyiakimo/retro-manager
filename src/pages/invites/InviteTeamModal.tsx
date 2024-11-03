@@ -103,7 +103,7 @@ export default function InviteTeamModal({ email, uuid }: InviteTeamModalProps) {
                     <p className="text-green-600">{successMessage}</p>
                   )}
                   <div>
-                    <label className="text-gray- 900 mb-2 block text-sm font-medium dark:text-white">
+                    <label className=" mb-2 block text-sm font-medium text-gray-900 dark:text-white">
                       Team Member Email
                     </label>
                     <input
