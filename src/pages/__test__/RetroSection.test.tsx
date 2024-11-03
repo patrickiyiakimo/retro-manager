@@ -1,7 +1,5 @@
-import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import RetroSection from "../RetroSection";
-
 
 
 global.fetch = jest.fn();
