@@ -66,6 +66,6 @@ describe("Footer component", () => {
       </MemoryRouter>,
     );
     const links = getAllByRole("link");
-    expect(links.length).toBe(5);
+    expect(links.length).toBe(13);
   });
 });

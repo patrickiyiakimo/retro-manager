@@ -100,7 +100,7 @@ export default function Footer() {
                 className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
               >
                 <svg
-                  className="h-4 w-4"
+                  className="size-4"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -119,7 +119,7 @@ export default function Footer() {
                 className="ms-5 text-gray-500 hover:text-gray-900 dark:hover:text-white"
               >
                 <svg
-                  className="h-4 w-4"
+                  className="size-4"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -134,7 +134,7 @@ export default function Footer() {
                 className="ms-5 text-gray-500 hover:text-gray-900 dark:hover:text-white"
               >
                 <svg
-                  className="h-4 w-4"
+                  className="size-4"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -153,7 +153,7 @@ export default function Footer() {
                 className="ms-5 text-gray-500 hover:text-gray-900 dark:hover:text-white"
               >
                 <svg
-                  className="h-4 w-4"
+                  className="size-4"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -172,7 +172,7 @@ export default function Footer() {
                 className="ms-5 text-gray-500 hover:text-gray-900 dark:hover:text-white"
               >
                 <svg
-                  className="h-4 w-4"
+                  className="size-4"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"

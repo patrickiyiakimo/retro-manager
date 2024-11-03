@@ -6,7 +6,7 @@ import { GiPadlock } from "react-icons/gi";
 export const sprintDetails = [
   {
     id: 1,
-    Icon: ImSpinner9, 
+    Icon: ImSpinner9 , 
     title: "Real-time Collaboration",
     body: "Instantly create your retrospective meetings and collaborate with your team in real-time.",
   },
