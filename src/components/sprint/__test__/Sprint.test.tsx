@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import Sprint from "../Sprint"; // Adjust the import path as necessary
+import Sprint from "../Sprint"; 
 import { sprintDetails } from "../SprintDetails"; // Adjust the import path as necessary
 
 describe("Sprint Component", () => {
