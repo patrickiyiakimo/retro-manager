@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { validationSchema } from "../utilities/validators";
-import {login} from "../api/LoginUser"
+import { validationSchema } from "../utilities/validators"; 
+import { login } from "../api/LoginUser";
 
 
 interface LogInFormValues {
@@ -27,12 +27,12 @@ const LogIn: React.FC = () => {
 
     try {
       const response = await login(userData);
-      console.log("LogIn successful:", response)
+      console.log("LogIn successful:", response);
     } catch (error) {
-      console.log("Login error:", error)
+      console.log("Login error:", error);
     } finally {
-      setSubmitting(false)
-      setIsLogin(false)
+      setSubmitting(false);
+      setIsLogin(false);
     }
   };
 
@@ -41,7 +41,7 @@ const LogIn: React.FC = () => {
       <div className="w-full max-w-sm rounded-lg border border-gray-200 bg-white p-4 shadow dark:border-gray-700 dark:bg-gray-800 sm:p-6 md:p-8">
         <Formik
           initialValues={{ email: "", password: "", remember: false }}
-          validator={validationSchema}
+          validationSchema={validationSchema} // Pass the validationSchema here
           onSubmit={handleLogIn}
         >
           {({ isSubmitting }) => (
@@ -88,7 +88,7 @@ const LogIn: React.FC = () => {
                       id="remember"
                       type="checkbox"
                       name="remember"
-                      className="focus:ring-3 -gray-300 h-4 w-4 rounded  border bg-gray-50 focus:ring-blue-300 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-800"
+                      className="focus:ring-3 -gray-300 h-4 w-4 rounded border bg-gray-50 focus:ring-blue-300 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-800"
                     />
                   </div>
                   <label className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -102,12 +102,12 @@ const LogIn: React.FC = () => {
                   Forgot Password?
                 </a>
               </div>
-              {isLogin ? (
-                <button
-                  type="submit"
-                  className="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                  disabled={isSubmitting}
-                >
+              <button
+                type="submit"
+                className="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                disabled={isSubmitting}
+              >
+                {isLogin ? (
                   <div role="status">
                     <svg
                       aria-hidden="true"
@@ -126,15 +126,10 @@ const LogIn: React.FC = () => {
                       />
                     </svg>
                   </div>
-                </button>
-              ) : (
-                <button
-                  type="submit"
-                  className="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                >
-                  Login to your account
-                </button>
-              )}
+                ) : (
+                  <span>Login to your account</span>
+                )}
+              </button>
               <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
                 Not registered?{" "}
                 <Link
