@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
           <img
             src="/images/logoipsum-296.svg"
             className="h-8"
-            alt="Flowbite Logo"
+            alt="retro manager Logo"
           />
           <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
             RM

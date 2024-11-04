@@ -11,7 +11,7 @@ describe("Navbar component", () => {
       </MemoryRouter>,
     );
     expect(getByText("RM")).toBeInTheDocument();
-    expect(getByAltText("Flowbite Logo")).toBeInTheDocument();
+    expect(getByAltText("retro manager Logo")).toBeInTheDocument();
   });
 
   it("renders log in button", () => {
