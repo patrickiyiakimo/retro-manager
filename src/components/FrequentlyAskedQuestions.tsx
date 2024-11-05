@@ -1,4 +1,3 @@
-import React from "react";
 import { faq } from "./Faq";
 import { Accordion } from "flowbite-react";
 
