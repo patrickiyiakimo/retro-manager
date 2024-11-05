@@ -13,7 +13,7 @@ export default function Sprint({ sprintDetails }: SprintProps) {
   return (
     <div className="pb-20 md:pb-40">
       <div className="container md:gap-10 lg:flex ">
-        <div className=" ">
+        <div className="">
           <h1 className="ml-10 pb-10 text-2xl font-bold md:ml-10 md:text-5xl lg:mt-40">
             What is Sprint Evaluation?
           </h1>
@@ -27,16 +27,19 @@ export default function Sprint({ sprintDetails }: SprintProps) {
           <img
             src="/images/main-pic-68043f7e0b9a77d65db913dd43a9da06.png"
             alt="engineering-sprint-section"
-            className="ml-10 mt-10 w-3/4  rounded-lg sm:w-full  sm:px-10 md:rounded-l-full "
+            className="ml-10 mt-10 w-3/4 rounded-lg sm:w-full sm:px-10 md:rounded-l-full"
           />
         </div>
       </div>
 
-      {/* Map over sprintDetails and render each item */}
-      <div className="mx-10 mt-20 gap-10 md:mt-40 md:grid md:grid-cols-2 md:px-10 lg:grid lg:grid-cols-2 ">
+      {/* Map over sprintDetails and render each item in a responsive grid */}
+      <div className="mx-10 mt-20 gap-10 md:mt-40 md:grid md:grid-cols-2 md:px-10 lg:grid lg:grid-cols-2 dark:text-white ">
         {sprintDetails.map(({ id, Icon, title, body }) => (
-          <div key={id} className=" mb-10  items-start">
-            <figure>
+          <div
+            key={id}
+            className="mb-10 flex flex-col items-start rounded-lg border dark:border-gray-600 bg-white dark:bg-gray-800  p-5 shadow-md transition-shadow duration-300 hover:shadow-2xl"
+          >
+            <figure className="mb-4">
               <Icon className="size-14" data-testid="displayName" />
             </figure>
 
