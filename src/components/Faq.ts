@@ -1,6 +1,3 @@
-import React from "react"
-
-
 export const faq = [
   {
     title: "What is the Retro Manager Web App?",
