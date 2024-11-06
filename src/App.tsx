@@ -14,7 +14,6 @@ import RetroDashboard from "./pages/RetroDashboard";
 import InviteTeamMembers from "./pages/invites/InviteTeamMembers";
 import Services from "./components/Services";
 import FrequentlyAskedQuestions from "./components/FrequentlyAskedQuestions";
-import About from "./components/About";
 
 
 
@@ -52,9 +51,8 @@ function App() {
           <Route path="/inviteteam" element={<InviteTeamMembers />} />
           <Route path="/services" element={<Services />} />
           <Route path="/faq" element={<FrequentlyAskedQuestions />} />
-          <Route path="/about" element={<About />} />
+          {/* <Route path="/services" element={<Faq />} /> */}
         </Routes>
-
         <Footer />
       </main>
     </Router>
