@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { generate_id } from "../api/GenerateTeamId";
 import { FaRegCopy } from "react-icons/fa6";
 import { GrStatusGood } from "react-icons/gr";
+import { Link } from "react-router-dom";
 
 export default function CreateTeam() {
   const [uuid, setUuid] = useState<string | null>(null);
@@ -66,9 +67,11 @@ export default function CreateTeam() {
       </div>
       {uuid && (
         <div className="mt-4 flex items-center justify-center">
-          <button className="rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-400">
-            Invite Team
-          </button>
+          <Link to="/inviteteam">
+            <button className="rounded-md bg-blue-700 px-4 py-2 text-white hover:bg-blue-600">
+              Invite Team
+            </button>
+          </Link>
         </div>
       )}
     </div>
