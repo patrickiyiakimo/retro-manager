@@ -50,7 +50,6 @@ export default function Sprint({ sprintDetails }: SprintProps) {
           </div>
         ))}
       </div>
-      {/* <OurMission /> */}
     </div>
   );
 }
