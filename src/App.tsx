@@ -1,8 +1,8 @@
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-import PublicRetro from "./components/publicretro/PublicRetro";
-import { publicRetro } from "./components/publicretro/PublicRetro.";
+import PublicRetro from "./layout/PublicRetro";
+import { publicRetro } from "./layout/PublicRetro.";
 import Sprint from "./components/sprint/Sprint";
 import { sprintDetails } from "./components/sprint/SprintDetails";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
