@@ -23,7 +23,7 @@ export default function Sprint({ publicRetro }: RetroProps) {
               <img
                 src={image}
                 alt={`${title} logo`}
-                className="h-80 w-96 transform rounded-t-lg transition-transform duration-300 ease-out hover:scale-105" // Add transition classes
+                className="h-80 w-96 transform rounded-t-lg transition-transform duration-300 ease-out hover:scale-105"
               />
             </figure>
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
