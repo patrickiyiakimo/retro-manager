@@ -51,7 +51,6 @@ function App() {
           <Route path="/inviteteam" element={<InviteTeamMembers />} />
           <Route path="/services" element={<Services />} />
           <Route path="/faq" element={<FrequentlyAskedQuestions />} />
-          {/* <Route path="/services" element={<Faq />} /> */}
         </Routes>
         <Footer />
       </main>
