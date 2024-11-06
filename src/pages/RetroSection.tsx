@@ -52,7 +52,7 @@ export default function RetroSection() {
             <label>What went well?</label>
             <textarea
               id="whatWentWell"
-              className="mt-2 w-full border-2 bg-white px-0 pl-2 text-sm text-gray-900 focus:ring-0 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+              className="mt-2 w-full border-2 bg-white px-0 pl-2 text-sm text-gray-900 focus:ring-0 dark:bg-gray-800 dark:text-white dark:placeholder-white"
               placeholder="comment something..."
               value={accomplished}
               onChange={(e) => setAccomplished(e.target.value)}
@@ -65,7 +65,7 @@ export default function RetroSection() {
             <label>What did not go well?</label>
             <textarea
               id="whatDidNotGoWell"
-              className="mt-2 w-full border-2 bg-white px-0 pl-2 text-sm text-gray-900 focus:ring-0 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+              className="mt-2 w-full border-2 bg-white px-0 pl-2 text-sm text-gray-900 focus:ring-0 dark:bg-gray-800 dark:text-white dark:placeholder-white"
               placeholder="comment something..."
               value={not_well}
               onChange={(e) => setNot_well(e.target.value)}
@@ -78,7 +78,7 @@ export default function RetroSection() {
             <label>What's your focus this week?</label>
             <textarea
               id="workingOn"
-              className="mt-2 w-full border-2 bg-white px-0 pl-2 text-sm text-gray-900 focus:ring-0 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+              className="mt-2 w-full border-2 bg-white px-0 pl-2 text-sm text-gray-900 focus:ring-0 dark:bg-gray-800 dark:text-white dark:placeholder-white"
               placeholder="comment something..."
               value={working_on}
               onChange={(e) => setWorking_on(e.target.value)}
@@ -91,7 +91,7 @@ export default function RetroSection() {
             <label>What do we need to improve on? </label>
             <textarea
               id="improvement"
-              className="mt-2 w-full border-2 bg-white px-0 pl-2 text-sm text-gray-900 focus:ring-0 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+              className="mt-2 w-full border-2 bg-white px-0 pl-2 text-sm text-gray-900 focus:ring-0 dark:bg-gray-800 dark:text-white dark:placeholder-white"
               placeholder="comment something..."
               value={improvement}
               onChange={(e) => setImprovement(e.target.value)}
