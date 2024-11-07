@@ -45,7 +45,7 @@ export default function RetroSection() {
 
   return (
     <div className="min-h-screen pt-40">
-      <p className="mx-10 mb-10 text-xl ">{formattedDate}</p>
+      <p className="mx-10 mb-10 text-xl">{formattedDate}</p>
       <form className="gap-10 md:flex" onSubmit={onSubmitStandup}>
         <div className="mb-4 w-full rounded-lg border border-gray-200 bg-gray-50 dark:border-gray-600 dark:bg-gray-700">
           <div className="rounded-t-lg bg-white px-4 py-2 dark:bg-gray-800">

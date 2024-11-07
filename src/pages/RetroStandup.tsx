@@ -62,7 +62,7 @@ export default function RetroStandup() {
       {retro.map((retroItem) => (
         <div key={retroItem.standup_id} className="space-y-4">
           <Card className="p-6">
-            <h2 className="mb-4 text-xl font-semibold text-gray-800 dark:text-white">
+            <h2 className="mb-4 text-sm font-semibold text-gray-800 dark:text-white">
               Standup for {formatDate(retroItem.created_at)}
             </h2>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
