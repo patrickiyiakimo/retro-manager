@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import InvitesTable from "./InvitesTable"; // Adjust the import path as necessary
-import InviteTeamModal from "./InviteTeamModal"; // Adjust the import path as necessary
-import { fetchInvites } from "../../api/FetchInvites"; // Adjust the import path as necessary
+import InvitesTable from "./InvitesTable"; 
+import InviteTeamModal from "./InviteTeamModal"; 
+import { fetchInvites } from "../../api/FetchInvites";
 
 interface Invite {
   email: string;
