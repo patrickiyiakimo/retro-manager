@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import InviteTeamModal from "./InviteTeamModal";
 import InvitesTable from "./InvitesTable";
-import { fetchInvites } from "../../api/FetchInvites"; // Adjust the import path as necessary
+import { fetchInvites } from "../../api/FetchInvites"; 
 
 interface Invite {
   email: string;
@@ -9,11 +9,11 @@ interface Invite {
 }
 
 export default function InviteTeamMembers() {
-  const [invites, setInvites] = useState<Invite[]>([]); // State to hold invites
+  const [invites, setInvites] = useState<Invite[]>([]); 
 
   const fetchData = async () => {
     try {
-      const response = await fetchInvites(); // Fetch invites from your API
+      const response = await fetchInvites(); 
       setInvites(response);
     } catch (error) {
       console.error("Error fetching invites:", error);
@@ -38,12 +38,10 @@ export default function InviteTeamMembers() {
           Collaborate with teams from anywhere in the world
         </p>
         <div className="items-center justify-center space-y-4 sm:flex sm:space-x-4 sm:space-y-0 rtl:space-x-reverse">
-          <InviteTeamModal addInvite={addInvite} />{" "}
-          {/* Pass addInvite function */}
+          <InviteTeamModal addInvite={addInvite} />
         </div>
         <div>
-          <InvitesTable invites={invites} />{" "}
-          {/* Pass invites to InvitesTable */}
+          <InvitesTable invites={invites} />
         </div>
       </div>
     </div>
