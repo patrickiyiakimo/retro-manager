@@ -9,11 +9,11 @@ interface Invite {
 }
 
 export default function InviteManager() {
-  const [invites, setInvites] = useState<Invite[]>([]); // Specify the type for invites
+  const [invites, setInvites] = useState<Invite[]>([]); 
 
   const fetchData = async () => {
     try {
-      const response = await fetchInvites(); // Fetch invites from your API
+      const response = await fetchInvites(); 
       setInvites(response);
     } catch (error) {
       console.error("Error fetching invites:", error);
@@ -25,7 +25,6 @@ export default function InviteManager() {
   }, []);
 
   const addInvite = (newInvite: Invite) => {
-    // Specify the type for newInvite
     setInvites((prevInvites) => [...prevInvites, newInvite]);
   };
 
