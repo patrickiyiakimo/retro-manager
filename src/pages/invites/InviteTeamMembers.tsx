@@ -1,9 +1,32 @@
+import { useEffect, useState } from "react";
 import InviteTeamModal from "./InviteTeamModal";
 import InvitesTable from "./InvitesTable";
+import { fetchInvites } from "../../api/FetchInvites"; // Adjust the import path as necessary
+
+interface Invite {
+  email: string;
+  position?: string;
+}
 
 export default function InviteTeamMembers() {
-  const email = "";
-  const uuid = "";
+  const [invites, setInvites] = useState<Invite[]>([]); // State to hold invites
+
+  const fetchData = async () => {
+    try {
+      const response = await fetchInvites(); // Fetch invites from your API
+      setInvites(response);
+    } catch (error) {
+      console.error("Error fetching invites:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const addInvite = (newInvite: Invite) => {
+    setInvites((prevInvites) => [...prevInvites, newInvite]);
+  };
 
   return (
     <div className="flex min-h-screen items-center justify-center px-20">
@@ -15,10 +38,12 @@ export default function InviteTeamMembers() {
           Collaborate with teams from anywhere in the world
         </p>
         <div className="items-center justify-center space-y-4 sm:flex sm:space-x-4 sm:space-y-0 rtl:space-x-reverse">
-          <InviteTeamModal email={email} uuid={uuid} />
+          <InviteTeamModal addInvite={addInvite} />{" "}
+          {/* Pass addInvite function */}
         </div>
         <div>
-          <InvitesTable />
+          <InvitesTable invites={invites} />{" "}
+          {/* Pass invites to InvitesTable */}
         </div>
       </div>
     </div>
