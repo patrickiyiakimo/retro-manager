@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false); // State to control menu visibility
+  const [isOpen, setIsOpen] = useState(false); 
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen); // Toggle the state when the hamburger is clicked
+    setIsOpen(!isOpen); 
   };
 
   return (
@@ -72,18 +72,6 @@ const Navbar: React.FC = () => {
                 aria-current="page"
               >
                 Home
-              </li>
-            </Link>
-            
-            <Link to="/about">
-              <li className="mt-3 block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500">
-                About
-              </li>
-            </Link>
-
-            <Link to="/services">
-              <li className="mt-3 block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500">
-                Services
               </li>
             </Link>
 

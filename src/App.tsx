@@ -12,7 +12,6 @@ import SignUp from "./pages/SignUp";
 import CreateTeam from "./pages/CreateTeam";
 import RetroDashboard from "./pages/RetroDashboard";
 import InviteTeamMembers from "./pages/invites/InviteTeamMembers";
-import Services from "./components/Services";
 import FrequentlyAskedQuestions from "./components/FrequentlyAskedQuestions";
 
 
@@ -49,7 +48,6 @@ function App() {
           <Route path="/createteam" element={<CreateTeam />} />
           <Route path="/retrodashboard" element={<RetroDashboard />} />
           <Route path="/inviteteam" element={<InviteTeamMembers />} />
-          <Route path="/services" element={<Services />} />
           <Route path="/faq" element={<FrequentlyAskedQuestions />} />
         </Routes>
         <Footer />
