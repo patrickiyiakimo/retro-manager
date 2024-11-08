@@ -161,7 +161,6 @@ export default function InviteTeamModal({ addInvite }: InviteTeamModalProps) {
                     )}
                   </button>
                 </form>
-
                 {inviteSent && (
                   <Link to="/retrosection">
                     <button
