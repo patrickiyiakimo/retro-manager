@@ -1,10 +1,6 @@
-// IconWrapper.test.tsx
-import React from "react";
 import { render, screen } from "@testing-library/react";
 import IconWrapper from "../IconWrapper";
-// import IconWrapper from "./IconWrapper";
 
-// Mock Icon component for testing
 const MockIcon = () => <svg data-testid="mock-icon" />;
 
 describe("IconWrapper", () => {

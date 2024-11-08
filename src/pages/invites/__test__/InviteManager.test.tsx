@@ -1,8 +1,9 @@
-import { render, screen, waitFor, fireEvent } from "@testing-library/react"; 
+import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import { fetchInvites } from "../../../api/FetchInvites";
 import InviteManager from "../InviteManager";
 
-jest.mock("./InvitesTable", () => () => <div data-testid="invites-table" />);
+// Adjust the path to InvitesTable based on your project structure
+jest.mock("../InvitesTable", () => () => <div data-testid="invites-table" />);
 jest.mock(
   "./InviteTeamModal",
   () =>
@@ -13,7 +14,7 @@ jest.mock(
     ),
 );
 
-jest.mock("../../api/FetchInvites", () => ({
+jest.mock("../../../api/FetchInvites", () => ({
   fetchInvites: jest.fn(),
 }));
 
