@@ -1,8 +1,6 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import SignUp from "../SignUp";
 import { signup } from "../../api/SignupUser";
-// import SignUp from "../SignUp";
-// import { signup } from "../../api/SignupUser";
 
 jest.mock("../../api/SignupUser ");
 

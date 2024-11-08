@@ -11,7 +11,7 @@ const IconWrapper: React.FC<IconWrapperProps> = ({
   testId,
   className,
 }) => {
-  return <Icon data-testid={testId} className={className} />;
+  return <Icon data-testid="icon-wrapper" className={className} />;
 };
 
 export default IconWrapper;
