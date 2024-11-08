@@ -12,11 +12,13 @@ export default function InviteTeamModal({ addInvite }: InviteTeamModalProps) {
   const [teamUuid, setTeamUuid] = useState("");
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const [inviteSent, setInviteSent] = useState(false);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
     setError("");
     setSuccessMessage("");
+    setInviteSent(false);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -38,9 +40,10 @@ export default function InviteTeamModal({ addInvite }: InviteTeamModalProps) {
       });
       console.log("Invite successful:", response);
       setSuccessMessage("Invite sent successfully!");
+      setInviteSent(true);
 
       // Call addInvite to update the invites in the parent component
-      addInvite({ email: teamEmail, position: "Invited" }); 
+      addInvite({ email: teamEmail, position: "Invited" });
 
       setTeamEmail("");
       setTeamUuid("");
@@ -144,11 +147,11 @@ export default function InviteTeamModal({ addInvite }: InviteTeamModalProps) {
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921  9.08144 50.5908Z"
+                          d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
                           fill="currentColor"
                         />
                         <path
-                          d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C62.1586 10.7673 68.6267 12.5409 74.6534 15.3602C80.6796 18.2011 86.2354 21.3707 90.4822 25.8915C91.8482 27.8935 92.7094 30.4049 92.9873 33.141C93.0124 33.2415 93.0095 33.3452 92.9683 33.4422C92.2859 36.6069 89.7497 39.4548 86.5256 39.6695C84.9484 39.8124 93.9676 39.0409 93.9676 39.0409Z"
+                          d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C62.1586 10.7673 68.6267 12.5409 74.6534 15.3602C80.6796 18.2011 86.2354 21.3707 90.4822 25.8915C91.8482 27.8935 92.7094 30.4049 92.9873 33.141C93.0124 33.2415 93.0095 33.3452 92.9688 33.4408C92.9281 33.5365 92.8523 33.6164 92.7566 33.6666C92.6608 33.7167 92.5501 33.7336 92.4442 33.7134C92.3385 33.6933 92.244 33.6371 92.1757 33.5554L81.9637 29.9096L93.9676 39.0409Z"
                           fill="currentFill"
                         />
                       </svg>
@@ -157,6 +160,18 @@ export default function InviteTeamModal({ addInvite }: InviteTeamModalProps) {
                     )}
                   </button>
                 </form>
+
+                {inviteSent && (
+                  <button
+                    className="mt-4 w-full rounded-lg bg-green-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                    onClick={() => {
+                      // Logic to start retro or navigate to another page
+                      console.log("Starting Retro...");
+                    }}
+                  >
+                    Start Retro
+                  </button>
+                )}
               </div>
             </div>
           </div>
