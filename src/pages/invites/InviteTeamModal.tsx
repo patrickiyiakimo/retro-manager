@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { inviteteam } from "../../api/InviteTeam";
+import { Link } from "react-router-dom";
 
 interface InviteTeamModalProps {
   addInvite: (invite: { email: string; position?: string }) => void;
@@ -162,15 +163,14 @@ export default function InviteTeamModal({ addInvite }: InviteTeamModalProps) {
                 </form>
 
                 {inviteSent && (
-                  <button
-                    className="mt-4 w-full rounded-lg bg-green-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-                    onClick={() => {
-                      // Logic to start retro or navigate to another page
-                      console.log("Starting Retro...");
-                    }}
-                  >
-                    Start Retro
-                  </button>
+                  <Link to="/retrosection">
+                    <button
+                      className="mt-4 w-full rounded-lg bg-green-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                      onClick={() => {}}
+                    >
+                      Start Retro
+                    </button>
+                  </Link>
                 )}
               </div>
             </div>
