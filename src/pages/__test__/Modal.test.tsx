@@ -47,9 +47,5 @@ describe("Modal", () => {
 
     // Simulate clicking the link
     fireEvent.click(linkElement);
-
-    // Since we are not using a real router, we cannot check for navigation,
-    // but we can ensure that the link behaves as expected.
-    // In a full integration test, you would use a testing library like `react-router` to check the route.
   });
 });
