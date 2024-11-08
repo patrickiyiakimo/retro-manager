@@ -1,14 +1,14 @@
-import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import { Formik } from "formik";
 import SignUp from "../SignUp";
 import { signup } from "../../api/SignupUser";
+// import SignUp from "../SignUp";
+// import { signup } from "../../api/SignupUser";
 
 jest.mock("../../api/SignupUser ");
 
 describe("SignUp Component", () => {
   beforeEach(() => {
-    jest.clearAllMocks(); 
+    jest.clearAllMocks();
   });
 
   test("renders the sign up form", () => {
@@ -104,8 +104,8 @@ describe("SignUp Component", () => {
     fireEvent.click(screen.getByRole("button", { name: /Create an Account/i }));
 
     await waitFor(() => {
-      expect(screen.queryByRole("status")).not.toBeInTheDocument(); 
-      expect(screen.getByText(/Signup failed/i)).toBeInTheDocument(); 
+      expect(screen.queryByRole("status")).not.toBeInTheDocument();
+      expect(screen.getByText(/Signup failed/i)).toBeInTheDocument();
     });
   });
 });
