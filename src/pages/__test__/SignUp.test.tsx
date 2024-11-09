@@ -4,7 +4,7 @@ import { signup } from "../../api/SignupUser";
 // import { signup } from "../../api/SignupUser "; // Ensure this path is correct
 
 // Corrected mock statement
-jest.mock("../../api/SignupUser ");
+jest.mock("../../api/SignupUser"); // Remove any extra spaces
 
 describe("SignUp Component", () => {
   beforeEach(() => {
@@ -103,10 +103,8 @@ describe("SignUp Component", () => {
 
     fireEvent.click(screen.getByRole("button", { name: /Create an Account/i }));
 
-    // await waitFor(() => {
-    //   expect(screen.queryBy )
-    //   expect(screen.queryByRole("status")).not.toBeInTheDocument();
-    //   expect(screen.getByText(/Signup failed/i)).toBeInTheDocument();
-    // });
+    await waitFor(() => {
+      expect(screen.getByText(/Signup failed/i)).toBeInTheDocument(); // Ensure error message is displayed
+    });
   });
 });

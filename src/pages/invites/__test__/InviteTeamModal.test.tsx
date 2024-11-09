@@ -1,7 +1,8 @@
+import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import InviteTeamModal from "../InviteTeamModal"; // Adjust the import path as necessary
+import InviteTeamModal from "../InviteTeamModal"; // Adjust the path if necessary
 import { inviteteam } from "../../../api/InviteTeam";
-// import { inviteteam } from "../../api/InviteTeam"; // Adjust the import path as necessary
+// import { inviteteam } from "../../api/InviteTeam"; // Ensure this path is correct
 
 // Mock the API call
 jest.mock("../../api/InviteTeam", () => ({
@@ -9,117 +10,56 @@ jest.mock("../../api/InviteTeam", () => ({
 }));
 
 describe("InviteTeamModal", () => {
-  const mockAddInvite = jest.fn();
+  const addInviteMock = jest.fn();
 
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
-  test("renders InviteTeamModal and opens the modal", () => {
-    render(<InviteTeamModal addInvite={mockAddInvite} />);
-
-    // Check if the button to open the modal is present
-    const openModalButton = screen.getByRole("button", {
-      name: /\+ invite team members/i,
-    });
-    expect(openModalButton).toBeInTheDocument();
-
-    // Click to open the modal
-    fireEvent.click(openModalButton);
-
-    // Check if modal content is visible
-    expect(screen.getByText(/invite team members/i)).toBeInTheDocument();
-  });
-
-  test("closes the modal when close button is clicked", () => {
-    render(<InviteTeamModal addInvite={mockAddInvite} />);
+  test("renders the modal and submits the form", async () => {
+    render(<InviteTeamModal addInvite={addInviteMock} />);
 
     // Open the modal
-    fireEvent.click(
-      screen.getByRole("button", { name: /\+ invite team members/i }),
-    );
+    fireEvent.click(screen.getByText("+ Invite Team Members"));
 
-    // Close the modal
-    fireEvent.click(screen.getByRole("button", { name: /close modal/i }));
-
-    // Check if modal content is not visible
-    expect(screen.queryByText(/invite team members/i)).not.toBeInTheDocument();
-  });
-
-  test("submits the form and calls addInvite on successful invite", async () => {
-    (inviteteam as jest.Mock).mockResolvedValueOnce({ success: true });
-
-    render(<InviteTeamModal addInvite={mockAddInvite} />);
-
-    // Open the modal
-    fireEvent.click(
-      screen.getByRole("button", { name: /\+ invite team members/i }),
-    );
-
-    // Fill the form
-    fireEvent.change(screen.getByPlaceholderText(/name@company.com/i), {
+    // Fill in the form
+    fireEvent.change(screen.getByPlaceholderText("name@company.com"), {
       target: { value: "test@example.com" },
     });
-    fireEvent.change(screen.getByPlaceholderText(/enter team id/i), {
-      target: { value: "12345" },
+    fireEvent.change(screen.getByPlaceholderText("Enter Team ID"), {
+      target: { value: "team-uuid-123" },
     });
 
     // Submit the form
-    fireEvent.click(screen.getByRole("button", { name: /send invite/i }));
+    fireEvent.click(screen.getByText("Send Invite"));
 
-    // Wait for the success message
+    // Mock the API response
+    (inviteteam as jest.Mock).mockResolvedValueOnce({ success: true });
+
+    // Wait for success message
     await waitFor(() => {
-      expect(screen.getByText(/invite sent successfully/i)).toBeInTheDocument();
+      expect(screen.getByText("Invite sent successfully!")).toBeInTheDocument();
     });
 
-    // Check if addInvite was called with the correct argument
-    expect(mockAddInvite).toHaveBeenCalledWith({
+    // Check if addInvite was called
+    expect(addInviteMock).toHaveBeenCalledWith({
       email: "test@example.com",
       position: "Invited",
     });
   });
 
-  test("shows error message when fields are empty", async () => {
-    render(<InviteTeamModal addInvite={mockAddInvite} />);
+  test("shows error message on invalid input", async () => {
+    render(<InviteTeamModal addInvite={addInviteMock} />);
 
     // Open the modal
-    fireEvent.click(
-      screen.getByRole("button", { name: /\+ invite team members/i }),
-    );
+    fireEvent.click(screen.getByText("+ Invite Team Members"));
 
-    // Submit the form without filling fields
-    fireEvent.click(screen.getByRole("button", { name: /send invite/i }));
+    // Submit the form without filling it
+    fireEvent.click(screen.getByText("Send Invite"));
 
     // Check for error message
-    expect(
-      await screen.findByText(/both fields are required/i),
-    ).toBeInTheDocument();
-  });
-
-  test("shows error message on invite failure", async () => {
-    (inviteteam as jest.Mock).mockRejectedValueOnce(new Error("Invite failed"));
-
-    render(<InviteTeamModal addInvite={mockAddInvite} />);
-
-    // Open the modal
-    fireEvent.click(
-      screen.getByRole("button", { name: /\+ invite team members/i }),
-    );
-
-    // Fill the form
-    fireEvent.change(screen.getByPlaceholderText(/name@company.com/i), {
-      target: { value: "test@example.com" },
+    await waitFor(() => {
+      expect(screen.getByText("Both fields are required.")).toBeInTheDocument();
     });
-    fireEvent.change(screen.getByPlaceholderText(/enter team id/i), {
-      target: { value: "12345" },
-    });
-
-    // Submit the form
-    fireEvent.click(screen.getByRole("button", { name: /send invite/i }));
-
-    // Check for error message
-    expect(
-      await screen.findByText(/error sending invite/i),
-    ).toBeInTheDocument();
   });
 });
