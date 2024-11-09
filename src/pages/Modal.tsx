@@ -9,9 +9,9 @@ export default function Modal() {
   };
 
   return (
-    <div className="mb-10 ml-5 mt-10 w-60 rounded-lg bg-blue-700  px-5  text-white">
+    <div className="my-10 ml-5 w-60  rounded-lg  bg-blue-700 px-5  text-white">
       {!isClose && (
-        <div className="mb-10 mt-10 w-60 rounded-lg bg-blue-700 px-5 text-white">
+        <div className="my-10 w-60 rounded-lg bg-blue-700 px-5 text-white">
           <span
             onClick={handleClose}
             className="ml-44 mt-5  cursor-pointer p-2 text-xl font-bold text-white"

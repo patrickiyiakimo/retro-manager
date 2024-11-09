@@ -33,14 +33,14 @@ export default function Sprint({ sprintDetails }: SprintProps) {
       </div>
 
       {/* Map over sprintDetails and render each item in a responsive grid */}
-      <div className="mx-10 mt-20 gap-10 md:mt-40 md:grid md:grid-cols-2 md:px-10 lg:grid lg:grid-cols-2 dark:text-white ">
+      <div className="mx-10 mt-20 gap-10 dark:text-white md:mt-40 md:grid md:grid-cols-2 md:px-10 lg:grid lg:grid-cols-2 ">
         {sprintDetails.map(({ id, Icon, title, body }) => (
           <div
             key={id}
-            className="mb-10 flex flex-col items-start rounded-lg border dark:border-gray-600 bg-white dark:bg-gray-800  p-5 shadow-md transition-shadow duration-300 hover:shadow-2xl"
+            className="mb-10 flex flex-col items-start rounded-lg border bg-white p-5 shadow-md  transition-shadow duration-300 hover:shadow-2xl dark:border-gray-600 dark:bg-gray-800"
           >
             <figure className="mb-4">
-              <Icon className="size-14" data-testid="displayName" />
+              <Icon className="size-14" data-testid="icon-wrapper" />
             </figure>
 
             <div>

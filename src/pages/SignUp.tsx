@@ -160,7 +160,7 @@
 // export default SignUp;
 
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { validationSchema } from "../utilities/validators";
 import { signup } from "../api/SignupUser";
@@ -220,10 +220,10 @@ const SignUp: React.FC = () => {
                   Your name
                 </label>
                 <Field
-                  id="name" // Add id here
+                  id="name" 
                   type="text"
                   name="name"
-                  className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400"
+                  className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder:text-gray-400"
                   placeholder="John Jones"
                 />
                 <ErrorMessage
@@ -243,7 +243,7 @@ const SignUp: React.FC = () => {
                   id="email" // Add id here
                   type="email"
                   name="email"
-                  className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400"
+                  className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder:text-gray-400"
                   placeholder="example@gmail.com"
                 />
                 <ErrorMessage
@@ -260,10 +260,10 @@ const SignUp: React.FC = () => {
                   Password
                 </label>
                 <Field
-                  id="password" 
+                  id="password"
                   type="password"
                   name="password"
-                  className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400"
+                  className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder:text-gray-400"
                   placeholder="••••••••"
                 />
                 <ErrorMessage
@@ -283,7 +283,7 @@ const SignUp: React.FC = () => {
                   id="remember" // Add id here
                   type="checkbox"
                   name="remember"
-                  className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+                  className="size-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
                 />
                 <ErrorMessage
                   name="remember"
@@ -319,7 +319,7 @@ const SignUp: React.FC = () => {
               ) : (
                 <button
                   type="submit"
-                  className="focus:ring- 4 w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  className="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium  text-white hover:bg-blue-800  focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                   Create an Account
                 </button>

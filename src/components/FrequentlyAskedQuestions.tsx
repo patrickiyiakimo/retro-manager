@@ -3,7 +3,7 @@ import { Accordion } from "flowbite-react";
 
 export default function FrequentlyAskedQuestions() {
   return (
-    <div className="py-40 min-h-screen md:mx-40">
+    <div className=" min-h-screen py-40 md:mx-40">
       <h1 className="mb-4 text-center text-2xl font-bold">
         Frequently Asked Questions
       </h1>

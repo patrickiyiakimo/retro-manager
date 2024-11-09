@@ -35,7 +35,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="hover:underline"
                     >
                       X (Twitter)
@@ -50,7 +50,7 @@ export default function Footer() {
                 <ul className="font-medium text-gray-500 dark:text-gray-400">
                   <li className="mb-4">
                     <a
-                      href="#"
+                      href="/"
                       className="hover:underline "
                     >
                       Github
@@ -72,12 +72,12 @@ export default function Footer() {
                 </h2>
                 <ul className="font-medium text-gray-500 dark:text-gray-400">
                   <li className="mb-4">
-                    <a href="#" className="hover:underline">
+                    <a href="/" className="hover:underline">
                       Privacy Policy
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:underline">
+                    <a href="/" className="hover:underline">
                       Terms &amp; Conditions
                     </a>
                   </li>
@@ -96,7 +96,7 @@ export default function Footer() {
             </span>
             <div className="mt-4 flex sm:mt-0 sm:justify-center">
               <a
-                href="#"
+                href="/"
                 className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
               >
                 <svg
@@ -115,7 +115,7 @@ export default function Footer() {
                 <span className="sr-only">Facebook page</span>
               </a>
               <a
-                href="#"
+                href="/"
                 className="ms-5 text-gray-500 hover:text-gray-900 dark:hover:text-white"
               >
                 <svg
@@ -130,7 +130,7 @@ export default function Footer() {
                 <span className="sr-only">Discord community</span>
               </a>
               <a
-                href="#"
+                href="/"
                 className="ms-5 text-gray-500 hover:text-gray-900 dark:hover:text-white"
               >
                 <svg
@@ -149,7 +149,7 @@ export default function Footer() {
                 <span className="sr-only">Twitter page</span>
               </a>
               <a
-                href="#"
+                href="/"
                 className="ms-5 text-gray-500 hover:text-gray-900 dark:hover:text-white"
               >
                 <svg
@@ -168,7 +168,7 @@ export default function Footer() {
                 <span className="sr-only">GitHub account</span>
               </a>
               <a
-                href="#"
+                href="/"
                 className="ms-5 text-gray-500 hover:text-gray-900 dark:hover:text-white"
               >
                 <svg
