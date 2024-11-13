@@ -15,7 +15,6 @@ jest.mock(
     ),
 );
 
-// Mock the fetchInvites function
 jest.mock("../../../api/FetchInvites", () => ({
   fetchInvites: jest.fn(),
 }));
@@ -44,12 +43,10 @@ describe("InviteManager", () => {
 
     render(<InviteManager />);
 
-    // Wait for the initial fetch
     await waitFor(() => {
       expect(screen.getByTestId("invites-table")).toBeInTheDocument();
     });
 
-    // Click the button to add an invite
     screen.getByText("Add Invite").click();
 
     // Check that the invite was added

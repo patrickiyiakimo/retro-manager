@@ -3,7 +3,6 @@ import { render, screen, waitFor } from "@testing-library/react";
 import InviteTeamMembers from "../InviteTeamMembers";
 import { fetchInvites } from "../../../api/FetchInvites";
 
-// Correct the mock paths for InvitesTable and InviteTeamModal components
 jest.mock("../InvitesTable", () => () => <div data-testid="invites-table" />);
 jest.mock(
   "../InviteTeamModal",
@@ -44,12 +43,10 @@ describe("InviteTeamMembers", () => {
 
     render(<InviteTeamMembers />);
 
-    // Wait for the initial fetch
     await waitFor(() => {
       expect(screen.getByTestId("invites-table")).toBeInTheDocument();
     });
 
-    // Click the button to add an invite
     screen.getByText("Add Invite").click();
 
     // Check that the invite was added

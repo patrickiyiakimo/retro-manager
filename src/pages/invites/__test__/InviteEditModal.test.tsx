@@ -33,7 +33,7 @@ describe("InviteTeamModal", () => {
 
   test("renders the buttons inside the modal", () => {
     const toggleButton = screen.getByRole("button", { hidden: true });
-    fireEvent.click(toggleButton); // Open the modal
+    fireEvent.click(toggleButton); 
 
     const resendButton = screen.getByRole("button", {
       name: /resend invitation/i,

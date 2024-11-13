@@ -45,28 +45,23 @@ describe("RetroStandup", () => {
   });
 
   test("deletes a standup item", async () => {
-    // Mocking fetch to return mock data for GET
+
     (fetch as jest.Mock).mockResolvedValueOnce({
       ok: true,
       json: jest.fn().mockResolvedValueOnce(mockStandups),
     });
 
-    // Mocking fetch for DELETE request
     (fetch as jest.Mock).mockResolvedValueOnce({ ok: true });
 
     render(<RetroStandup />);
 
-    // Wait for the standups to be displayed
     await screen.findByText(/standup for/i);
 
-    // Check that the first standup is present
     const deleteButton = screen.getByText(/delete/i);
     expect(deleteButton).toBeInTheDocument();
 
-    // Click the delete button
     fireEvent.click(deleteButton);
 
-    // Wait for the standup to be removed
     await waitFor(() => {
       expect(
         screen.queryByText(/completed the project/i),
@@ -75,7 +70,6 @@ describe("RetroStandup", () => {
   });
 
   test("handles fetch error gracefully", async () => {
-    // Mocking fetch to return an error for GET
     (fetch as jest.Mock).mockRejectedValueOnce(new Error("Fetch failed"));
 
     render(<RetroStandup />);

@@ -1,10 +1,8 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import SignUp from "../SignUp";
 import { signup } from "../../api/SignupUser";
-// import { signup } from "../../api/SignupUser "; // Ensure this path is correct
 
-// Corrected mock statement
-jest.mock("../../api/SignupUser"); // Remove any extra spaces
+jest.mock("../../api/SignupUser"); 
 
 describe("SignUp Component", () => {
   beforeEach(() => {
@@ -104,7 +102,7 @@ describe("SignUp Component", () => {
     fireEvent.click(screen.getByRole("button", { name: /Create an Account/i }));
 
     await waitFor(() => {
-      expect(screen.getByText(/Signup failed/i)).toBeInTheDocument(); // Ensure error message is displayed
+      expect(screen.getByText(/Signup failed/i)).toBeInTheDocument(); 
     });
   });
 });
