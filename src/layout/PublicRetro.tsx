@@ -28,9 +28,12 @@ export default function Sprint({ publicRetro }: RetroProps) {
   return (
     <div className="py-20 text-gray-800 dark:text-white">
       <h1 className="text-center text-4xl font-bold">Our Mission</h1>
-      <div className="my-10 grid gap-5 sm:grid-cols-2 md:ml-10 md:gap-10 md:px-10 lg:ml-32 lg:px-32">
+      <div className="my-10 grid gap-5 sm:grid-cols-1 md:ml-10 md:grid-cols-2 md:gap-10 md:px-10 lg:grid-cols-3 lg:px-32">
         {publicRetro.map(({ id, Icon, title, body, image }, index) => (
-          <Card key={id} className="max-w-sm">
+          <Card
+            key={id}
+            className="ml-3 max-w-sm sm:max-w-full lg:ml-0 lg:max-w-sm "
+          >
             {loadingStates[index] && (
               <div
                 role="status"
@@ -54,18 +57,24 @@ export default function Sprint({ publicRetro }: RetroProps) {
                 <div className="h-2 rounded-full bg-gray-200 dark:bg-gray-700"></div>
               </div>
             )}
-            <figure className={`overflow-hidden ${loadingStates[index] ? "hidden" : ""}`}>
+            <figure
+              className={`overflow-hidden ${loadingStates[index] ? "hidden" : ""}`}
+            >
               <img
                 src={image}
                 alt={`${title} logo`}
-                className="h-80 w-96 rounded-t-lg transition-transform duration-300 ease-out hover:scale-105"
-                onLoad={() => handleImageLoad(index)} 
+                className="h-80 w-96 rounded-t-lg transition-transform  duration-300 ease-out hover:scale-105 sm:h-80 sm:w-full lg:h-80 lg:w-96"
+                onLoad={() => handleImageLoad(index)}
               />
             </figure>
-            <h5 className={`text-2xl font-bold tracking-tight text-gray-900 dark:text-white ${loadingStates[index] ? "hidden" : ""}`}>
+            <h5
+              className={`text-2xl font-bold tracking-tight text-gray-900 dark:text-white ${loadingStates[index] ? "hidden" : ""}`}
+            >
               {title}
             </h5>
-            <p className={`font-normal text-gray-800 dark:text-white ${loadingStates[index] ? "hidden" : ""}`}>
+            <p
+              className={`font-normal text-gray-800 dark:text-white ${loadingStates[index] ? "hidden" : ""}`}
+            >
               {body}
             </p>
           </Card>
