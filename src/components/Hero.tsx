@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
           }
         });
       },
-      { threshold: 0.1 }, // Load the image when 10% of the section is in view
+      { threshold: 0.1 }, 
     );
 
     observer.observe(sectionElement);
@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
         ref={sectionRef}
         data-testid="hero-background"
         className="mb-20 bg-gray-700 bg-center bg-no-repeat bg-blend-multiply"
-        style={{ minHeight: "500px" }} // Placeholder for the height until the image loads
+        style={{ minHeight: "500px" }} 
       >
         <div className="mx-auto max-w-screen-xl px-4 py-24 text-center lg:py-56">
           <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
