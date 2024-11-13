@@ -24,12 +24,9 @@ export const emailValidator = Yup.string()
         if (typeof value === "string") {
           return value.length >= 6;
         }
-        return true; // If it's a number, we don't check length
+        return true; 
       },
     );
-// export const passwordValidator = Yup.string()
-//   .required("Password is required")
-//   .min(6, "Password must be at least 6 characters long");
 
 export const rememberValidator = Yup.boolean();
 

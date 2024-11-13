@@ -33,13 +33,4 @@ describe("Sprint Component", () => {
       expect(bodyElement).toBeInTheDocument();
     });
   });
-
-//   test("renders the icons for each sprint detail", () => {
-//     render(<Sprint sprintDetails={sprintDetails} />);
-
-//     sprintDetails.forEach(({ Icon }) => {
-//       const iconElement = screen.getByTestId(Icon.displayName);
-//       expect(iconElement).toBeInTheDocument();
-//     });
-//   });
 });
