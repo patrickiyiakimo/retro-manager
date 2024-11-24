@@ -1,30 +1,19 @@
 import { DarkThemeToggle } from "flowbite-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Logo from "./Logo";
 
 const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false); 
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen); 
+    setIsOpen(!isOpen);
   };
 
   return (
     <nav className="fixed start-0 top-0 z-20 w-full border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-900">
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
-        <Link
-          to="/"
-          className="flex items-center space-x-3 rtl:space-x-reverse"
-        >
-          <img
-            src="/images/logoipsum-296.svg"
-            className="h-8"
-            alt="retro manager Logo"
-          />
-          <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-            RM
-          </span>
-        </Link>
+        <Logo />
         <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
           <Link to="/login">
             <button
@@ -40,8 +29,8 @@ const Navbar: React.FC = () => {
             type="button"
             className="inline-flex size-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
             aria-controls="navbar-sticky"
-            aria-expanded={isOpen ? "true" : "false"} 
-            onClick={toggleMenu} 
+            aria-expanded={isOpen ? "true" : "false"}
+            onClick={toggleMenu}
           >
             <span className="sr-only">Open main menu</span>
             <svg
