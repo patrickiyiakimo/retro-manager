@@ -1,10 +1,11 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import Logo from "./Logo";
 
-const currentDate = new Date()
+const currentDate = new Date();
 const formattedDate = currentDate.toLocaleDateString("en-US", {
-  year: "numeric"
-})
+  year: "numeric",
+});
 
 export default function Footer() {
   return (
@@ -12,17 +13,8 @@ export default function Footer() {
       <footer className="bg-white dark:bg-gray-900">
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-between">
-            <Link to="/" className="mb-6 flex items-center md:mb-0">
-              <img
-                src="/images/logoipsum-296.svg"
-                className="mr-3 h-8"
-                alt="logoipsum-Logo"
-              />
-              <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-                RM
-              </span>
-            </Link>
-            <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
+            <Logo />
+            <div className="grid grid-cols-2 gap-8 max-md:mt-6 sm:grid-cols-3 sm:gap-6">
               <div>
                 <h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
                   Resources
@@ -34,10 +26,7 @@ export default function Footer() {
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="/"
-                      className="hover:underline"
-                    >
+                    <a href="/" className="hover:underline">
                       X (Twitter)
                     </a>
                   </li>
@@ -49,18 +38,12 @@ export default function Footer() {
                 </h2>
                 <ul className="font-medium text-gray-500 dark:text-gray-400">
                   <li className="mb-4">
-                    <a
-                      href="/"
-                      className="hover:underline "
-                    >
+                    <a href="/" className="hover:underline ">
                       Github
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="3"
-                      className="hover:underline"
-                    >
+                    <a href="3" className="hover:underline">
                       Discord
                     </a>
                   </li>
