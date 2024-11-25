@@ -5,13 +5,16 @@ interface InviteTeam {
 
 export const inviteteam = async (inviteTeam: InviteTeam): Promise<any> => {
   try {
-    const response = await fetch("http://localhost:2500/invites", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    const response = await fetch(
+      "https://retro-manager-backend.onrender.com/invites",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(inviteTeam),
       },
-      body: JSON.stringify(inviteTeam),
-    });
+    );
 
     if (!response.ok) {
       const errorData = await response.json();
