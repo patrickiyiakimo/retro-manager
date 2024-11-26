@@ -8,6 +8,9 @@ module.exports = {
       fontFamily: {
         mont: [".montserrat-alternates", "sans-serif"],
       },
+      backgroundImage: {
+        'img_404': 'url("/public/images/img_404.jpeg")'
+      }
     },
   },
   plugins: [flowbite.plugin()],
