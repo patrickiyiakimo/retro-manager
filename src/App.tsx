@@ -13,6 +13,7 @@ import CreateTeam from "./pages/CreateTeam";
 import RetroDashboard from "./pages/RetroDashboard";
 import InviteTeamMembers from "./pages/invites/InviteTeamMembers";
 import FrequentlyAskedQuestions from "./components/FrequentlyAskedQuestions";
+import NotFound from "./pages/NotFound";
 
 
 
@@ -49,6 +50,7 @@ function App() {
           <Route path="/retrodashboard" element={<RetroDashboard />} />
           <Route path="/inviteteam" element={<InviteTeamMembers />} />
           <Route path="/faq" element={<FrequentlyAskedQuestions />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </main>
